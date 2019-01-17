@@ -1,0 +1,104 @@
+page{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item-view{
+  width: 100%;
+  flex: 1;
+}
+
+.addressItem{
+  /* width: 100%; */
+  background-color: white;
+  margin: 20rpx 0rpx;
+  padding: 0rpx 20rpx;
+}
+
+.address-item-header{
+  height: 76rpx;
+  margin: 0rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-item-username{
+  font-size: 32rpx;
+  color: #282828;
+  font-weight: bold;
+}
+
+.address-item-defaultFlag{
+  background-color: #FFD101;
+  border-radius: 8rpx;
+  /* width: 84rpx;
+  height: 44rpx; */
+  font-size: 24rpx;
+  color: #282828;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.address-item-phone{
+  flex: 6;
+  color: #666666;
+  font-size: 26rpx;
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.address-item-content{
+  font-size: 26rpx;
+  color: #666666;
+  display: block;
+  width: 95%;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.address-item-line{
+  height: 2rpx;
+  background-color: #D9D9D9;
+}
+
+.address-item-footer{
+  height: 76rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.address-item-delbtn{
+  font-size: 24rpx;
+  color: red;
+  vertical-align: middle;
+  width: 60rpx;
+  /* flex: 1; */
+  /* margin-left: -40rpx; */
+  text-align: center;
+}
+
+.radio-group{
+  font-size: 24rpx;
+  color: #282828;
+  flex: 5;
+}
+
+radio {
+  transform:scale(0.85);
+}
+
+.add-new-address{
+  padding: 12rpx 8rpx;
+  width: 80%;
+  background-color: #FFD101;
+  color: #282828;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,227 @@
+page{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item-view{
+  width: 100%;
+  flex: 1;
+}
+
+.user-info-view{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20rpx 20rpx;
+}
+
+.user-name-view{
+  font-size: 32rpx;
+  color: #282828;
+  font-weight: bold;
+}
+
+.user-phone-view{
+  font-size: 26rpx;
+  color: #666666;
+}
+.address-view{
+  font-size: 26rpx;
+  color: #666666;
+  margin: auto 20rpx;
+}
+
+.line-view{
+  height: 5rpx;
+  background-color: #F80000;
+  margin: 20rpx 30rpx;
+}
+
+.transport-view{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 176rpx;
+  margin-top: 20rpx;
+}
+
+.transport-fee-view{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto 20rpx;
+}
+
+.transport-fee-view-title{
+  font-size: 30rpx;
+  color: #282828;
+  font-weight: bold;
+  width: 100rpx;
+}
+
+.transport-fee-view-value{
+  font-size: 30rpx;
+  color: #666666;
+  margin-left: 20rpx;
+}
+
+.sepre-line{
+  height: 2rpx;
+  background-color: #EDEDED;
+  margin: 0rpx 20rpx;
+}
+
+.comment-view{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto 20rpx;
+}
+
+.comment-view-title{
+  font-size: 30rpx;
+  color: #282828;
+  font-weight: bold;
+  width: 100rpx;
+}
+
+.comment-view-value{
+  font-size: 30rpx;
+  color: #666666;
+  margin-left: 20rpx;
+}
+
+.money-view{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 264rpx;
+  margin-top: 20rpx;
+}
+
+.product-money-view{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 20rpx;
+}
+
+.product-money-view-title{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.product-money-view-value{
+  font-size: 30rpx;
+  color: #F80000;
+}
+
+.transport-fee{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 20rpx;
+}
+
+.transport-fee-title{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.transport-fee-value{
+  font-size: 30rpx;
+  color: #F80000;
+}
+
+.real-fee-view{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto 20rpx;
+}
+
+.real-fee-view-title{
+  font-size: 30rpx;
+  color: #282828;
+  text-align: right;
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.real-fee-view-value{
+  font-size: 30rpx;
+  color: #F80000;
+  font-weight: bold;
+  width: 140rpx;
+}
+
+.product-view{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 20rpx;
+}
+
+.product-view-image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.product-view-detial{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.product-view-detial-desc{
+  font-size: 30rpx;
+  color: #282828;
+}
+
+.product-view-detial-price{
+  font-size: 22rpx;
+  color: #B8B8B8;
+}
+
+.product-view-desc{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-view-desc-key {
+  font-size: 28rpx;
+  color: #F80000;
+}
+
+.product-view-desc-value {
+  font-size: 22rpx;
+  color: #B8B8B8;
+}
+
+.wechat-pay-btn{
+  height: 98rpx;
+  /* width: 690rpx; */
+  background-color: #00C800;
+  color: white;
+  font-size: 34rpx;
+  font-weight: bold;
+  /* margin-bottom: 20rpx; */
+  margin: 20rpx;
+}

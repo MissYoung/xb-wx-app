@@ -1,0 +1,178 @@
+@import "../common/lib/weui.wxss";
+@import "../common/lib/common.wxss";
+page{background-color: #f8f8f8; height: 100%; font-size: 32rpx; line-height: 1.6;}
+.goods-info{width: 100%;height: 500rpx;position: relative;}
+.goods-name{position: absolute;bottom: 0%;left: 0;width: 100%;height: 100rpx;background: rgba(0, 0, 0, 0.3);color: #FFF;line-height: 100rpx;font-size: 30rpx;padding-left: 20rpx;}
+
+.record-box{padding: 20rpx;margin-top: 20rpx;background: #fff}
+.record-box .title{border-bottom: 1rpx solid #EDEDED; padding-bottom: 20rpx;}
+.record-box .max-time{font-size:80rpx;line-height: 80rpx;text-align: center;padding: 50rpx 0 15rpx 0;}
+.record-box .line{width: 100%; height: 6rpx; background: #f2f2f2; z-index: 2;position: relative}
+.record-box .line view{width: 50%; height: 6rpx; background: #F80000; position: absolute; bottom: 0; left: -6rpx; z-index: 2;}
+.record-box .price{padding: 10rpx 0;text-align: center;}
+.record-box .comment-head{height:100rpx;border: 0}
+.record-box .xianpai .user-info {position: relative;margin-top: 30rpx}
+.record-box .xianpai .user-info .info{font-size: 20rpx}
+.record-box .linxian{position: absolute;top:30rpx;right: 10rpx;color: red;}
+.record-box .more{margin: 30rpx;background: #F8F8F8;padding-top: 1rpx}
+.record-box .more .comment-head{padding-left:100rpx;height:60rpx;}
+.record-box .more .comment-head .name{font-size: 28rpx}
+.record-box .more .comment-head .head-img {width:60rpx;height:60rpx;}
+.record-box .more .comment-head .head-img image{width:60rpx;height:60rpx;}
+.record-box .more .comment-head .linxian{top:20rpx;font-size: 22rpx;right:30rpx;}
+.record-box .more .comment-head .quit{position: absolute;top:20rpx;right: 50%;color: red;font-size: 28rpx}
+.record-box .more  .all{text-align: center;font-size: 24rpx;color: #B8B8B8;margin-bottom: 30rpx;line-height: 60rpx}
+.record-box .price .max{font-size: 60rpx;color: red;}
+.record-box .price .min{font-size: 40rpx;color: #CCCCCC;text-decoration: line-through;}
+
+.yaoqin{margin: 30rpx 0;background: #FFF;position: relative;z-index: 1;padding-bottom: 30rpx}
+.yaoqin .title{line-height: 80rpx;font-size: 28rpx;padding: 0 20rpx;}
+.yaoqin .yaoqin-head{text-align: center;height: 60rpx;padding: 30rpx;}
+.yaoqin .yaoqin-head .user-head-box{width: 130rpx}
+.yaoqin .yaoqin-head .user-head-box .user image{height:60rpx;width:60rpx;}
+.yaoqin .yaoqin-head .user-head-box .user1 image{left: 50rpx;}
+.yaoqin .yaoqin-head .user-head-box .user2 image{left: 90rpx;}
+.yaoqin .count{line-height: 50rpx;font-size: 34rpx;padding-top: 30rpx 0;text-align: center}
+.yaoqin .count text{color: red}
+.yaoqin .info{line-height: 50rpx;font-size: 24rpx;padding-bottom: 30rpx 0;text-align: center;color: #B8B8B8}
+.yaoqin .btn{text-align: center;padding-top: 30rpx;}
+.yaoqin .btn button{background: #fff;color: red;width: 50%;font-size: 24rpx;line-height: 60rpx;border: 1px solid #F80000;border-radius: 60rpx}
+.buy-box{position: fixed;bottom: 0rpx;left: 0;width: 100%;height: 130rpx;z-index: 99}
+.buy-box button{float: left;border-radius: 0;padding: 0;text-align: center;color: #333}
+.buy-box button::after {border: none;}
+.buy-box .ico{height: 60rpx;}
+.buy-box .share{width: 130rpx;height: 130rpx;background: #fff;border-right: 1px solid #EDEDED;}
+.buy-box .collection{width: 130rpx;height: 130rpx;border-radius: 0;padding: 0;background: #fff;border-right: 1px solid #EDEDED;box-sizing: none;}
+.buy-box  .name{font-size: 24rpx;line-height: 60rpx}
+.buy-box .ft{width: 245rpx;height: 130rpx;background: #FFD101;}
+.buy-box .xp{width: 246rpx;height: 130rpx;background: #F80000;color: #FFF}
+.buy-box .hide{background: #CCCCCC}
+
+.goods-details{background: #FFF;padding: 30rpx;margin-top: 20rpx}
+.goods-details .goods-title{line-height: 80rpx;font-size: 35rpx;border-bottom: 1px solid #EDEDED;padding-bottom: 10rpx}
+.goods-details .goods-content{padding: 30rpx 0;}
+.goods-details .goods-content img{max-width: 100%}
+.m-height{height: 150rpx;}
+/* 评论列表 */
+.comments{background: #FFF;padding: 30rpx;margin-top: 20rpx}
+.comments .comment-title{line-height: 80rpx;font-size: 35rpx;border-bottom: 1px solid #EDEDED;padding-bottom: 10rpx}
+.comments .comment-title text{float: right}
+.comments .comment-content{padding: 30rpx 0;overflow:hidden;white-space:nowrap;}
+.comments .comment-item{width: 600rpx;height: 600rpx;margin-right: 23rpx;display: inline-block;overflow: hidden;padding: 30rpx; border: 1px solid #D9D9D9;box-sizing: border-box;border-radius: 10rpx;white-space: initial;}
+.comment-head{padding-left: 150rpx;height: 150rpx;position: relative;border-bottom: 1px solid #EDEDED;padding-bottom: 30rpx;}
+.comment-head .head-img{width: 80rpx;height: 80rpx;position: absolute;top:20rpx;left: 20rpx;overflow: hidden;border-radius: 80rpx;}
+.comment-head .head-img image{width: 80rpx;height: 80rpx;}
+.comment-head .user-info .name{font-size: 40rpx;line-height: 60rpx;}
+.comment-head .user-info .price{font-size: 35rpx;line-height: 50rpx;color: red}
+.comments .comment-item .user-content{height: 160rpx;overflow: hidden;margin: 10rpx 0;}
+.comments  .comment-img image{width: 110rpx;height: 110rpx;margin-right: 30rpx}
+.comments  .comment-img image:last-child{margin-right: 0rpx}
+
+/* 团购 */
+.tuangou{margin: 30rpx 0;background: #FFF;position: relative;z-index: 1;padding: 30rpx}
+.tuangou-title{border-bottom: 1px solid #EDEDED;padding-bottom: 10rpx}
+.tuangou .tuangouPrice{font-size: 25rpx;line-height: 90rpx;color: red;text-align: center;vertical-align: middle;height: 90rpx;overflow: hidden;padding-top: 40rpx}
+.tuangou .currentPrice{font-size: 80rpx;color: red;}
+.tuangou .oldPrice{font-size: 25rpx;color: #CCCCCC;text-decoration: line-through}
+.tuangou .Surplus{font-size: 25rpx;text-align: center;color: #666666;line-height: 35rpx;padding-top: 10rpx;border-bottom: 1px solid #EDEDED;padding-bottom: 50rpx;}
+.tuangou .info {padding: 30rpx 100rpx 30rpx 60rpx;position: relative;}
+.tuangou .info .title{font-size: 30rpx;line-height: 45rpx;color: #282828;font-weight: bold;margin-bottom: 15rpx;}
+.tuangou .info text{color: red;}
+.tuangou .info .gongxian{font-size: 26rpx;line-height: 35rpx;margin-bottom: 15rpx;color: #666666;}
+.tuangou .info .jindu{width: 400rpx;height: 18rpx;border-radius: 20rpx;background: #F2F2F2;margin-bottom: 20rpx;overflow: hidden}
+.tuangou .info .jindu view{height: 18rpx;width: 50%;border-radius: 20rpx;background: #FFD101;overflow: hidden}
+.tuangou .info button{/*position: absolute;right: 0rpx;top:45rpx;*/width: 150rpx;height: 60rpx;border: none;border-radius: 40rpx;font-size: 24rpx;background:#FFD101;color: #282828;}
+.tuangou .info .red{color: #FFF;background: red;}
+.tuangou .price{padding: 10rpx 0;text-align: center;}
+.tuangou .comment-head{height:100rpx;border: 0}
+.tuangou .xianpai .user-info {position: relative;margin-top: 30rpx}
+.tuangou .xianpai .user-info .info{font-size: 20rpx}
+.tuangou .linxian{position: absolute;top:30rpx;right: 10rpx;color: red;}
+.tuangou  .more{margin: 30rpx;background: #F8F8F8;padding-top: 1rpx}
+.tuangou  .more .comment-head{padding-left:100rpx;height:60rpx;}
+.tuangou  .more .comment-head .name{font-size: 28rpx}
+.tuangou  .more .comment-head .head-img {width:60rpx;height:60rpx;}
+.tuangou  .more .comment-head .head-img image{width:60rpx;height:60rpx;}
+.tuangou  .more .comment-head .linxian{top:20rpx;font-size: 22rpx;right:30rpx;}
+.tuangou  .more .comment-head .quit{position: absolute;top:20rpx;right: 50%;color: #A0DC1C;font-size: 28rpx}
+.tuangou  .more  .all{text-align: center;font-size: 24rpx;color: #B8B8B8;margin-bottom: 30rpx;line-height: 60rpx}
+
+.no-goods-tips {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.tips-container {
+  width: 78%;
+  min-height: 188rpx;
+  position: absolute;
+  top: 35%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.text-tips {
+  display: block;
+  font-size: 30rpx;
+  padding: 30rpx 20rpx;
+  line-height: 50rpx;
+  color: #666;
+  text-align: center;
+}
+.back-index-btn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 78rpx;
+  line-height: 78rpx;
+  color: #666;
+  font-size: 32rpx;
+  text-align: center;
+  border-top: 1rpx solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

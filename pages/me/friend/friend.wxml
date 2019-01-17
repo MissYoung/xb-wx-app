@@ -1,0 +1,19 @@
+<scroll-view class='list-item-view'>
+  <block wx:for='{{addressList}}' wx:key='{{item.addressId}}' >
+   <view class='addressItem' bindtap='itemClicked' data-item='{{item}}'>
+    <view class='address-item-header'>
+      <text class='address-item-username'>{{item.contacts}}</text>
+      <block wx:if="{{item.mark == 1}}">
+        <text class='address-item-defaultFlag'>默认</text>
+      </block>
+      <text class='address-item-phone'>{{item.phone}}</text>
+    </view>
+    <text class='address-item-content'>{{item.city+item.address}}</text>
+    <view class='address-item-line'></view>
+    <view class='address-item-footer'>
+        <radio color='#FFD101' value="{{item.addressId}}" data-id='{{item.addressId}}' checked="{{item.mark}}"/>设为默认
+      <text class='address-item-delbtn' data-id='{{item.addressId}}' bindtap='delAddressFunc'>删除</text>
+    </view>
+   </view>
+ </block>
+</scroll-view>

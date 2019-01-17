@@ -1,0 +1,315 @@
+@import "../common/lib/weui.wxss";
+@import "../common/lib/common.wxss";
+page{background-color: #f2f2f2; height: 100%; font-size: 32rpx; line-height: 1.6;overflow-x: hidden;overflow-y: auto;}
+.container {width: 100%;overflow-x: hidden;overflow-y: auto;}
+.page-body{}
+.page-section{width: 100%; background: #fff;}
+.page-section_center{display: flex; flex-direction: column; align-items: center;}
+.page-section:last-child{margin-bottom: 0;}
+.page-section-spacing{display: block; height: 750rpx; box-sizing: border-box; position: relative;}
+.swiper-box{height: 720rpx; position: relative; z-index: 2;}
+.swiper-item{display: block; height: 700rpx; background-color: #fff; border-radius: 15rpx; margin: 0 12rpx; box-shadow: 0 0 15rpx 1rpx rgba(0, 0, 0, 0.2); position: relative; padding-top: 1rpx;}
+.view-scale {
+  transform: scale(0.9);
+}
+.swiper-bg{width: 100%; height: 700rpx; position: absolute; top: 0; left: 0; background: linear-gradient(to bottom,#ffd101 38%,#ffeb00 48%, #fefefe 75%)}
+.swiper-item .hot{max-width: 40%; font-size: 20rpx; color: #fff; background: #fc9c00; position: absolute; top: 20rpx; left: -12rpx; border-radius: 3px; padding: 0 20rpx 0 60rpx; height: 50rpx; line-height: 50rpx;}
+.swiper-item .hot image{position: absolute; left: 20rpx; top: 10rpx; height: 30rpx; width: 30rpx;}
+.swiper-item .user{max-width: 50%; font-size: 20rpx; color: #fff; position: absolute; top: 20rpx; right: 0px; height: 50rpx; line-height: 50rpx; padding-left: 50rpx;}
+.swiper-item .user image{height: 40rpx; width: 40rpx; overflow: hidden; border-radius: 40rpx; position: absolute; top: 6rpx; left: 0px;}
+.swiper-item .navigator{color: #b8b8b8; display: inline-block; margin: 0; padding: 0; background: none; line-height: 50rpx; height: 50rpx; padding-right: 10rpx;}
+.swiper-item .navigator view{color: #f80000; display: inline-block; margin-left: 10rpx;}
+.swiper-item .navigator-hover{color: #b8b8b8; display: inline-block; margin: 0; padding: 0; background: none; height: 350rpx; overflow: hidden;}
+.swiper-item .commodity-pic{margin: 90rpx auto 0 auto; width: 75%; overflow: hidden; position: relative;}
+.swiper-item .commodity-pic .navigator{width: 100%; position: relative; height: 350rpx;}
+.swiper-item .commodity-pic .line{width: 100%; height: 4rpx; background: #f2f2f2; position: absolute; bottom: 0; right: 0; z-index: 2;}
+.swiper-item .commodity-pic .line view{width: 50%; height: 4rpx; background: #a0dc1c; position: absolute; bottom: 0; left: -6rpx; z-index: 2;}
+.swiper-item .commodity-pic image{width: 100%; height: 350rpx; position: relative; bottom: 0; left: 0; z-index: 1;}
+.swiper-item .commodity-name{margin: 0rpx auto 0 auto; width: 75%; color: #282828; font-size: 30rpx; line-height: 30rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.swiper-item .price{margin: 20rpx auto 0 auto; width: 75%; line-height: 60rpx;}
+.swiper-item .price .now-price{font-size: 45rpx; color: #f80000;}
+.swiper-item .price .original-price{margin-left: 5rpx; font-size: 22rpx; color: #ccc; text-decoration: line-through;}
+.swiper-item .buy-btn{margin: 0rpx auto 0 auto; width: 75%; line-height: 80rpx; color: #282828; font-size: 36rpx; text-align: center; font-weight: bold; border-radius: 5px; background: linear-gradient(to right, #ffeb00, #f6cb1a); box-shadow: 0 10px 15px rgba(255, 223, 0, 0.2);}
+.types-box{text-align: center; overflow: hidden; background: #fff;}
+.types-box .types-list{width: 20%; height: 140rpx; text-align: center; float: left;}
+.types-box .types-list .img{height: 70rpx; overflow: hidden;}
+.types-box .types-list text{font-size: 22rpx; color: #666;}
+.my-num{margin: 20rpx; height: 140rpx; background: #fff; position: relative; padding-left: 184rpx;}
+.my-num .may-ico{width: 124rpx; height: 104rpx; position: absolute; top: 18rpx; left: 30rpx;}
+.my-num .my-num-couent{font-size: 36rpx; color: #282828; font-weight: bold; line-height: 60rpx; padding-top: 20rpx;}
+.my-num .my-num-couent text{color: #fc9c00; margin-left: 20rpx;}
+.my-num .my-num-info{color: #b8b8b8; font-size: 24rpx;}
+.my-num .my-btn{width: 200rpx; height: 101rpx; position: absolute; top: 20rpx; right: 15rpx; text-align: center;}
+.my-num .my-btn image{width: 200rpx; height: 101rpx; position: absolute; top: 0; left: 0; z-index: 1;}
+.my-num .my-btn text{position: relative; z-index: 2; color: #fff; line-height: 90rpx; text-align: center; font-size: 30rpx; font-weight: bold;}
+.item-box{background: #fff;}
+.item-box .hot-box{position: relative; overflow: hidden; padding: 36rpx 0; margin: 0 30rpx; border-bottom: 1px solid #ededed;}
+.item-box .hot-box .item-term{width: 50%; float: left; text-align: center; box-sizing: border-box;}
+.item-box .hot-box .item-term:first-child{border-right: 1px solid #ededed;}
+.item-box .hot-box .item-term .titie{font-size: 34rpx; line-height: 40rpx; margin-bottom: 10rpx;}
+.item-box .hot-box .item-term .sun-title{font-size: 24rpx; color: #b8b8b8; line-height: 35rpx; margin-bottom: 15rpx;display: block; height: 18rpx;}
+.item-box .hot-box .item-term .hot-num{font-size: 26rpx; color: #282828; line-height: 35rpx; font-weight: bold; margin-bottom: 30rpx;}
+.item-box .hot-box .item-term .hot-num > text{color: #f80000;}
+.item-box .hot-box .item-term .hot-num > text.symbol{font-weight: normal;color: #333;}
+.item-box .hot-box .item-term .hot-img{height: 234rpx; width: auto; background: no-repeat center;}
+.every-day{padding-top: 40rpx;}
+.every-day .titie{text-align: center;}
+.every-day .titie image{width: 37rpx; height: 33rpx; vertical-align: middle;}
+.every-day .titie text{margin-left: 20rpx; line-height: 33rpx; font-size: 33rpx; font-weight: bold; vertical-align: middle;}
+.every-day .time{margin-top: 26rpx;}
+.every-day .time text{white-space: nowrap; margin: 0 10rpx; color: #ccc; font-size: 28rpx;}
+.every-day .time .active{color: #f80000;}
+.goods-list .swiper-item{display: inline-block; width: 280rpx; height: 504rpx; border-radius: 0rpx; margin: 20px 0 0 30rpx; box-shadow: none; white-space: nowrap;}
+.goods-list .swiper-item .commodity-pic{margin: 0 auto; width: 100%; position: relative; z-index: 1;}
+.goods-list .swiper-item .hot{max-width: 100%; width: 100%; font-size: 24rpx; color: #fff; background: rgba(0, 0, 0, 0.3); position: absolute; top: 0rpx; left: 0rpx; border-radius: 0px; padding: 0; height: 50rpx; line-height: 50rpx; z-index: 2;}
+.goods-list .swiper-item .hot text{margin-left: 90rpx;}
+.goods-list .swiper-item .user{max-width: 50%; font-size: 20rpx; color: #fff; position: absolute; top: 0rpx; right: 0px; left: 0px; height: auto; z-index: 1;}
+.goods-list .swiper-item .user image{height: 32rpx; width: 32rpx; overflow: hidden; border-radius: 40rpx; position: absolute; top: 10rpx; left: 10rpx; border: 1rpx solid #fff;}
+.goods-list .swiper-item .user1 image{left: 30rpx; z-index: 2;}
+.goods-list .swiper-item .user2 image{left: 50rpx; z-index: 3;}
+.crazy-total {
+  float: left;
+  line-height: 58rpx;
+}
+.goods-list .swiper-item .commodity-pic .navigator{height: 280rpx; overflow: hidden;}
+.goods-list .swiper-item .commodity-name{margin: 5rpx auto 0 auto; width: 100%; color: #282828; font-size: 24rpx; line-height: 30rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.goods-list .swiper-item .price{margin: 8rpx auto; width: 100%; line-height: 45rpx;}
+.goods-list .swiper-item .price .now-price{font-size: 22rpx; font-weight: bold}
+.goods-list .swiper-item .price .original-price{font-size: 18rpx;}
+.goods-list .swiper-item .remind-btn{margin: 10rpx auto 0 auto; width: 100%; line-height: 80rpx; color: #282828; font-size: 36rpx; text-align: center; font-weight: bold; border-radius: 80px; background: linear-gradient(to right, #ffeb00, #f6cb1a); box-shadow: 0 5px 15px rgba(255, 223, 0, 0.2);}
+.goods-list .swiper-item .buy-btn{margin: 10rpx auto 0 auto; width: 100%; line-height: 80rpx; color: #282828; font-size: 36rpx; text-align: center; font-weight: bold; border-radius: 80px; color: #fff; background: linear-gradient(to right, #FC7600, #FF003D); box-shadow: 0 5px 15px rgba(255, 0, 61, 0.2);}
+
+/* 晒单 */
+.sunburn{padding-top: 50rpx;}
+.sunburn .title{text-align: center;margin-bottom: 45rpx;}
+.sunburn .title .max-title{font-size: 36rpx;color: #282828;font-weight: bold;line-height: 50rpx;margin-bottom: 10rpx;}
+.sunburn .title .max-title image{width: 36rpx;height: 33rpx;vertical-align: middle;}
+.sunburn .title .max-title text{margin: 0 20rpx;vertical-align: middle;}
+.sunburn .title .sun-title{font-size: 24rpx;color:#B8B8B8;line-height: 33rpx;} 
+.sunburn .commodity{padding: 20rpx 30rpx;overflow: hidden;}
+.sunburn .commodity .commodity-item{background: #FFF;box-shadow: 0 0 30rpx rgba(0, 0, 0, 0.2);width: 335rpx;margin-bottom: 20rpx;float: left;margin-right: 20rpx;border-radius: 6rpx;}
+.sunburn .commodity .commodity-item:nth-child(2n+0){margin-right: 0}
+.sunburn .commodity .user-info{position: relative;padding: 20rpx 0 0 72rpx;}
+.sunburn .commodity .user-info image{position: absolute;top:20rpx;left: 20rpx;width: 36rpx;height: 36rpx;border-radius: 36px;}
+.sunburn .commodity .user-info .comment{font-size: 22rpx;color:#282828;font-weight: bold;}
+.sunburn .commodity .user-info .time{font-size: 22rpx;color:#B8B8B8;} 
+.sunburn .commodity .commodity-pic{width: 295rpx;height: 295rpx;margin: 20rpx auto;}
+.sunburn .commodity .commodity-pic .price{width: 295rpx;height: 295rpx;background: rgba(0, 0, 0, 0.6);}
+.sunburn .commodity .commodity-pic .price-buy{padding-top: 80rpx;text-align: center;line-height: 88rpx;font-size: 40rpx;color: #FFD101;font-weight: bold}
+.sunburn .commodity .commodity-pic .price-buy text{font-size: 70rpx;}
+.sunburn .commodity .commodity-pic .earn{font-size: 22rpx;color: #fff;text-align: center}
+.sunburn .commodity-info {padding:0 20rpx 30rpx 102rpx;height: 64rpx;position: relative;}
+.sunburn .commodity-info .pic-box{height: 64rpx;width: 64rpx;position: absolute;left: 20rpx;top:0;}
+.sunburn .commodity-info .name{width: 200rpx;color: #282828;font-size: 20rpx;}
+.sunburn .commodity-info .price{font-size: 20rpx;color: #CCCCCC;text-decoration:line-through;}
+.sunburn .commodity-info .line{font-size: 22rpx;color: #CCCCCC;position: absolute;right: 20rpx;top:20rpx;}
+.commodity-info .line image {
+  width: 35rpx;
+  height: 35rpx;
+}
+/* 仙贝说 */
+.special{padding:50rpx 0;background: #ffffff;}
+.special .title{text-align: center;margin-bottom: 45rpx;}
+.special .title .max-title{font-size: 36rpx;color: #282828;font-weight: bold;line-height: 50rpx;margin-bottom: 10rpx;}
+.special .title .max-title image{width: 36rpx;height: 33rpx;vertical-align: middle;}
+.special .title .max-title text{margin: 0 20rpx;vertical-align: middle;}
+.special .title .sun-title{font-size: 24rpx;color:#B8B8B8;line-height: 33rpx;} 
+.special .hot-box{height: 364rpx;position: relative;padding-top: 1px;}
+.special .hot-box .hot-info{height:44rpx;position: absolute;top:0;left: 0;background: #FC9C00;font-size: 24rpx;line-height: 44rpx;padding-left: 54rpx;padding-right: 20rpx;border-bottom-right-radius: 22rpx;color: #FFF;}
+.special .hot-box .hot-info image{width: 26rpx;height: 29rpx;position: absolute;top:7rpx;left: 20rpx;}
+.special .hot-title-box{display: block;margin: 192rpx auto 0 auto;text-align: center}
+.special .hot-title-box .title-box{display: inline-block;text-align: center;padding: 26rpx 70rpx;background: rgba(0, 0, 0, 0.75)}
+.special .hot-title-box .title-box .hot-title{color: #fff;font-size: 30rpx;line-height: 42rpx;}
+.special .hot-title-box .title-box .hot-user{font-size: 22rpx;color: #EDEDED;}
+.special .hot-title-box .title-box .hot-user text{vertical-align: middle;}
+.special .hot-title-box .title-box .hot-user image{width: 36rpx;height: 36rpx;vertical-align: middle;border-radius: 36rpx;}
+.hot-list{display: inline-block;white-space: normal;width: 300rpx;height: 192rpx;overflow: hidden;padding: 0 0 0 215rpx;background: #f2f2f2;position: relative;margin-right: 20rpx;border-radius: 6rpx;}
+.hot-list .hot-img{position: absolute; top: 0;left: 0;width: 192rpx;height: 192rpx;}
+.hot-content .hon-head-img {padding-top: 10rpx;}
+.hot-content .hon-head-img image{width: 28rpx;height: 28rpx;margin-right: 10rpx}
+.hot-content .hot-goods-name{display:block;text-align: justify;font-size: 24rpx;line-height: 40rpx;height: 80rpx;overflow: hidden;color: #333;}
+.hot-content .hot-price{color: red;font-size:30rpx;}
+.sd-item{position: relative;width: 92%;margin: 0 4%;}
+.sd-item .commodity-pic{margin: 0 auto; width: 100%; position: relative; z-index: 1;}
+.sd-item .hot{max-width: 100%; width: 100%; font-size: 24rpx; color: #fff; background: rgba(0, 0, 0, 0.3); position: absolute; top: 0rpx; left: 0rpx; border-radius: 0px; padding: 0; height: 50rpx; line-height: 50rpx; z-index: 2;}
+.sd-item .hot text{margin-left: 90rpx;}
+.sd-item .user{max-width: 50%; font-size: 20rpx; color: #fff; position: absolute; top: 0rpx; right: 0px; left: 0px; height: auto; z-index: 1;}
+.sd-item .user image{height: 32rpx; width: 32rpx; overflow: hidden; border-radius: 40rpx; position: absolute; top: 10rpx; left: 10rpx; border: 1rpx solid #fff;}
+.sd-item .user1 image{left: 30rpx; z-index: 2;}
+.sd-item .user2 image{left: 50rpx; z-index: 3;}
+.sd-item .commodity-pic .navigator{height: 280rpx; overflow: hidden;position: relative;border: 1px solid #f3f3f3;}
+.sd-item .commodity-pic .navigator image {
+  position: absolute;top: 0;right: 0;bottom: 0;left: 0;margin: auto;
+  max-width: 100%;max-height: 100%;
+}
+.sd-item .commodity-name{margin: 15rpx 0; width: 100%; color: #282828; font-size: 26rpx; line-height: 40rpx; font-weight: bold;overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.sd-item .price{width: 100%; line-height: 35rpx;}
+.sd-item .price .now-price{font-size: 22rpx; font-weight: bold}
+.sd-item .price .original-price{font-size: 24rpx; color: #666666;}
+.sd-item .remind-btn{margin: 10rpx auto 0 auto; width: 100%; line-height: 80rpx; color: #282828; font-size: 36rpx; text-align: center; font-weight: bold; border-radius: 80px; background: linear-gradient(to right, #ffeb00, #f6cb1a); box-shadow: 0 5px 15px rgba(255, 223, 0, 0.2);}
+.sd-item .price .head-img-icon {
+  float: left;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  margin-right: 5rpx;
+  border: 1px solid #eee;
+}
+.classify-type {
+  float: right;
+  margin-top: -50rpx;
+}
+.classify-type text {
+  float: right;
+  display: block;
+  padding: 3rpx 15rpx;
+  background: #FFD101;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+.sd-item .buy-btn{margin: 10rpx auto 0 auto; width: 100%; line-height: 80rpx; color: #282828; font-size: 36rpx; text-align: center; font-weight: bold; border-radius: 80px; color: #fff; background: linear-gradient(to right, #FC7600, #FF003D); box-shadow: 0 5px 15px rgba(255, 0, 61, 0.2);}
+
+
+
+/* 精选大牌 */
+.selected{padding:50rpx 0;background: #f2f2f2;}
+.selected .title{text-align: center;margin-bottom: 45rpx;}
+.selected .title .max-title{font-size: 36rpx;color: #282828;font-weight: bold;line-height: 50rpx;margin-bottom: 10rpx;}
+.selected .title .max-title image{width: 36rpx;height: 33rpx;vertical-align: middle;}
+.selected .title .max-title text{margin: 0 20rpx;vertical-align: middle;}
+.selected .title .sun-title{font-size: 24rpx;color:#B8B8B8;line-height: 33rpx;} 
+.selected .commodity-list {
+  background: #fff;
+  border-radius: 6rpx;
+}
+.selected .camera-commodity-price {
+  border: 1px solid #ededed;
+  border-radius: 5rpx;
+}
+.selected .camera-commodity-currentPrice text{
+  font-size: 20rpx;
+}
+.selected .camera-commodity-currentPrice {
+  font-size: 34rpx;
+  margin: 5rpx 0 0;
+}
+.selected .camera-commodity-origalPrice {
+  margin: 0 0 5rpx;
+}
+.selected .camera-commodity-origalPrice label {
+  text-decoration: line-through;
+}
+.selected .camera-user .camera-user-url {
+  border-radius: 50%;
+  border: 1px solid #efefef;
+  margin-right: 10rpx;
+}
+
+.end-page {
+  width: 100%;
+  height: 40rpx;
+  padding: 10rpx 0 80rpx;
+  background: #f2f2f2;
+  text-align: center;
+  color: #ccc;
+  font-size: 28rpx;
+  position: relative;
+}
+.end-page::before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 240rpx;
+  top: 32rpx;
+  width: 58rpx;
+  height: 2rpx;
+  background: #ccc;
+}
+.end-page::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 240rpx;
+  top: 32rpx;
+  width: 58rpx;
+  height: 2rpx;
+  background: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

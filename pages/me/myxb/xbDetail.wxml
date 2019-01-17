@@ -1,0 +1,17 @@
+<view class="xb-menus">
+  <text class="xb-menu {{requestType == 1?'clicked':''}}" data-type='1' bindtap='menuClicked'>收入</text>
+  <text class="xb-menu {{requestType == 2?'clicked':''}}" data-type='2' bindtap='menuClicked'>支出</text>
+</view>
+
+<scroll-view class='list-item-view'>
+  <block wx:for="{{xbLogs}}" wx:key="{{item.logId}}" >
+    <view class='xb-item'>
+      <image class='xb-pic' src='/image/UserCenter/arrow.png'></image>
+      <view class='xb-detail'>
+        <text class='xb-detail-title'>{{item.details}}</text>
+        <text class='xb-detail-time'>{{item.createTime}}</text>
+      </view>
+      <text class="xb-num {{requestType == 2 ? 'blue':''}}">{{requestType == 2 ? '-':'+'}}{{item.xbSum}}</text>
+    </view>
+  </block>
+</scroll-view>

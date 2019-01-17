@@ -1,0 +1,50 @@
+page{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-input-list{
+  margin: 20rpx 0rpx;
+  background-color: EDEDED;
+  flex: 1;
+}
+
+.user-input-view{
+  height: 98rpx;
+  border-bottom: 2rpx solid #EDEDED;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0rpx 20rpx;
+  background-color: white;
+}
+
+.title-label{
+  font-size: 30rpx;
+  color: #282828;
+  font-weight: bold;
+  width: 120rpx;
+}
+
+.input-user-info{
+  font-size: 30rpx;
+  color: #282828;
+  margin-left: 10rpx; 
+  flex: 1;
+}
+
+.user-input-view image{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.save-address{
+  height: 98rpx;
+  width: 690rpx;
+  background-color: #FFD101;
+  color: #282828;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin: 0rpx auto 20rpx auto;
+}

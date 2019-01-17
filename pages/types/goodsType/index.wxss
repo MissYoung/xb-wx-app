@@ -1,0 +1,75 @@
+@import "../../common/lib/weui.wxss";
+@import "../../common/lib/common.wxss";
+page{background-color: #f8f8f8; height: 100%; font-size: 32rpx; line-height: 1.6;}
+
+.types-item{width: 160rpx;margin: 20rpx;height: 120rpx;text-align: center;font-size: 25rpx;color: #FFF;line-height: 120rpx;display: inline-block}
+.commodity-list{position: relative;}
+.commodity-list .hon-head-img {position: absolute;top: 80rpx;left: 30rpx;padding-top: 10rpx;}
+.commodity-list .hon-head-img image{width: 50rpx;height: 50rpx;margin-right: 10rpx}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+/* 公共样式 */
+/* 溢出省略号 */
+.ellipsis{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+.camera-commodities-show{
+  display: flex;
+  flex-direction: column;
+  margin: 0rpx 30rpx;
+}
+
+.camera-commodies-list{
+  margin: 10rpx 0rpx;
+}
+
+.commodity-list{
+  width: 295rpx;
+  height: 528rpx;
+  float: left;
+  margin-bottom: 20rpx;
+  /* border: 2rpx solid #eee;  */
+  box-shadow: 0rpx 0rpx 20rpx 5rpx #eee;
+  padding: 20rpx;
+}
+
+.left{
+  margin-right: 20rpx;
+}
+
+.camera-commodity-name{
+  font-size: 28rpx;
+  color: #282828;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.camera-commodity-url{
+  width: 100%;
+  height: 300rpx;
+}
+
+.camera-commodity-price{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.camera-commodity-currentPrice{
+  font-size: 22rpx;
+  color: #F80000;
+  font-weight: bold;
+}
+
+.camera-commodity-origalPrice{
+  font-size: 22rpx;
+  color: #CCCCCC;
+  margin: 10rpx auto;
+  text-decoration: line-through;
+}
+
+.camera-show-view{
+  flex: 1;
+  height: 6rpx;
+  margin: auto 20rpx auto 0rpx;
+  background-color: #F2F2F2;
+  border-radius: 3rpx;
+}
+
+.camera-current-schedule{
+  height: 6rpx;
+  background-color: #A0DC1C;
+  border-radius: 3rpx;
+}
+
+.camera-user{
+  width: 100%;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.camera-user-url{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.camera-user-nickname2{
+  font-size: 22rpx;
+  color: #B8B8B8;
+}
+
+
+
+.user-head-box{display: inline-block;width: 100rpx;height: 32rpx;position: relative;}
+.user-head-box .user{max-width: 50%; font-size: 20rpx; color: #fff; position: absolute; top: 0rpx; right: 0px; left: 0px; height: auto; z-index: 1;}
+.user-head-box .user image{height: 32rpx; width: 32rpx; overflow: hidden; border-radius: 40rpx; position: absolute; top: 0rpx; left: 10rpx; border: 1rpx solid #fff;}
+.user-head-box .user1 image{left: 30rpx; z-index: 2;}
+.user-head-box .user2 image{left: 50rpx; z-index: 3;}

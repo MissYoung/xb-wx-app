@@ -1,0 +1,85 @@
+page{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-order-view{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-order-success-view{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.pay-order-success-icon{
+  flex: 1;
+}
+
+.pay-order-success-tips{
+  line-height: 60rpx;
+  color: #333333;
+  font-size: 40rpx;
+}
+
+.pay-order-success-detail{
+   line-height: 40rpx;
+   color: #999999;
+   font-size: 30rpx;
+   margin-bottom: 120rpx;
+}
+
+.pay-order-share-tip-view{
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.line-view{
+  margin: 0rpx 20rpx;
+  height: 2rpx;
+  background-color: #EDEDED;
+}
+
+.sku-share-view{
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.back-to-first-page-btn{
+  height: 98rpx;
+  background-color: #FEDE1A;
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 20rpx;
+  border-radius: 49rpx;
+}
+
+.back-to-jingPai-btn{
+  height: 98rpx;
+  background-color: white;
+  color: #FC9C00;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 20rpx 20rpx 50rpx 20rpx;
+  border-radius: 49rpx;
+  border: 2rpx solid #FC9C00;
+}
+
+.sku-share-view{margin: 20rpx; height: 140rpx; background: #fff; position: relative; padding-left: 184rpx;}
+.sku-share-view .may-ico{width: 124rpx; height: 104rpx; position: absolute; top: 18rpx; left: 30rpx;}
+.sku-share-view .sku-share-view-couent{font-size: 22rpx; color: #999999; line-height: 60rpx; padding-top: 20rpx;}
+.sku-share-view .sku-share-view-couent text{color: #fc9c00; margin-left: 20rpx;}
+.sku-share-view .sku-share-view-info{color: #282828; font-size: 30rpx;}
+.sku-share-view .my-btn{width: 180rpx; height: 101rpx; position: absolute; top: 20rpx; right: 15rpx; text-align: center;}
+.sku-share-view .my-btn image{width: 200rpx; height: 101rpx; position: absolute; top: 0; left: 0; z-index: 1;}
+.sku-share-view .my-btn text{position: relative; z-index: 2; color: #fff; line-height: 90rpx; text-align: center; font-size: 30rpx; font-weight: bold;}

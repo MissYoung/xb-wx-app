@@ -1,0 +1,107 @@
+page{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment{
+  flex: 1;
+}
+
+.comment-sku-show{
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 208rpx;
+  align-items: center;
+}
+
+.comment-content{
+  margin: 20rpx;
+  background-color: white;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.comment-content-title{
+  font-size: 30rpx;
+  color: #282828;
+  line-height: 44rpx;
+}
+
+.comment-content-comment{
+  font-size: 26rpx;
+  color: #282828;
+  flex: 1;
+  margin-top: 20rpx;
+}
+
+.comment-content-limit{
+  font-size: 22rpx;
+  color: #B8B8B8;
+  text-align: right;
+}
+
+.comment-img-list{
+  margin: 20rpx;
+  flex: 1;
+}
+
+.submit-comment-btn{
+  height: 98rpx;
+  background-color: #FFEB00;
+  color: #282828;
+  font-size: 34rpx;
+  font-weight: bold;
+  margin: 20rpx;
+}
+
+.comment-sku-show-img{
+  margin: auto 20rpx;
+  width: 148rpx;
+  height: 148rpx;
+}
+
+.comment-sku-show-details{
+  flex: 1;
+  height: 148rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comment-sku-show-details-title{
+  color: #282828;
+  font-size: 30rpx;
+}
+
+.comment-sku-show-details-detail{
+  color: #B8B8B8;
+  font-size: 22rpx;
+}
+
+.comment-img-add-img{
+  background-color: white;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx 30rpx 0rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.comment-img-add-img-icon{
+  max-width: 60rpx;
+  max-height: 60rpx;
+  overflow: hidden;
+}
+
+.comment-img-add-img-text{
+  font-size: 22rpx;
+  color: #282828;
+}

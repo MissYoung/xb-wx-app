@@ -1,0 +1,74 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/types/types",
+    "pages/types/goodsType/index",
+    "pages/logs/logs",
+    "pages/goods/index",
+    "pages/discover/discover",
+    "pages/discover/search/search",
+
+
+    "pages/me/me",
+    "pages/me/myxb/myxb",
+    "pages/me/myxb/xbDetail",
+    "pages/me/xbq/xbq",
+    "pages/me/orders/orders",
+    "pages/me/orders/detail/orderDetail",
+    "pages/me/orders/payOrder/confirmOrder",
+    "pages/me/orders/payOrder/paySuccess",
+    "pages/me/orders/comment/comment",
+    "pages/me/orders/comment/commentSuccess",
+    "pages/me/orders/comment/commentList",
+
+    "pages/me/collect/collect",
+    "pages/me/address/address",
+    "pages/me/address/addressAdd",
+    "pages/me/records/records",
+    "pages/me/friend/friend",
+    
+    "pages/first/first"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFD101",
+    "navigationBarTitleText": "仙贝首页",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#FFD101",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/home/home-icon.png",
+        "selectedIconPath": "image/home/home-icon-selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/discover/discover",
+        "iconPath": "image/home/find-icon.png",
+        "selectedIconPath": "image/home/find-icon-selected.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "image/home/my-icon.png",
+        "selectedIconPath": "image/home/my-icon-selected.png",
+        "text": "我"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wx0daef3156d5a58fc"
+  ]
+}

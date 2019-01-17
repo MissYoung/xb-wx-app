@@ -1,0 +1,4 @@
+<view class='header_btn'>
+  <image class='header_avar_btn' src='{{app.globalData.userInfo.avatarUrl}}'></image>
+</view>
+<button class='request_avar_btn' open-type='getUserInfo'  bindgetuserinfo='loadUserInfo'>登录授权</button>

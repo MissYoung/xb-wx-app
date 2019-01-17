@@ -1,0 +1,26 @@
+<form bindsubmit='saveAddressFunc'>
+<view class='user-input-list'>
+  <view class='user-input-view'>
+    <text class='title-label'>联系人</text>
+    <input class='input-user-info' name='username' placeholder-style="color:#B8B8B8" placeholder = '输入名字' focus='true' type='text' value='{{contacts}}'></input>
+  </view>
+  <view class='user-input-view'>
+    <text class='title-label'>手机号</text>
+    <input class='input-user-info' name='phoneNum' placeholder-style="color:#B8B8B8" placeholder = '输入11位手机号' maxlength='11' type='number' value='{{phone}}'></input>
+  </view>
+  <view class='user-input-view'>
+    <text class='title-label'>选择地区</text>
+    <input class='input-user-info' name='area' placeholder-style="color:#B8B8B8" placeholder = '地区信息' type='text' value='{{city}}'></input>
+    <image src='/image/UserCenter/arrow.png'></image>
+  </view>
+  <view class='user-input-view'>
+    <text class='title-label'>详细地址</text>
+    <input class='input-user-info' name='detailAddress' placeholder-style="color:#B8B8B8" placeholder = '街道门牌信息' type='text' value='{{address}}'></input>
+  </view>
+  <view class='user-input-view'>
+    <text class='title-label'>邮政编码</text>
+    <input class='input-user-info' name='yzbm' placeholder-style="color:#B8B8B8" placeholder = '邮政编码' type='number' value='{{postcode}}'></input>
+  </view>
+</view>
+<button class='save-address' form-type='submit'>提交</button>
+</form>

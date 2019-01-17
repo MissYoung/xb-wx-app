@@ -1,0 +1,344 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <view class='swiper-bg'></view>
+      <swiper indicator-dots="{{false}}" autoplay="true" circular="{{circular}}" vertical="{{vertical}}" interval="5000" duration="{{duration}}" current="{{current}}" previous-margin="72rpx" next-margin="72rpx" class="swiper-box" bindchange="changeHandle">
+        <block wx:for="{{swiper}}" wx:key="index">
+          <swiper-item>
+            <view class="swiper-item {{currentSlide === index ? '' : 'view-scale'}}">
+              <view class='hot'>
+                <image src="/image/home/hot.png"></image>{{item.total}}人疯抢</view>
+              <view class='user' >
+                <image src='{{item.current.customer.wxHeadimgurl}}'></image>
+                <navigator url="pages/index/index" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+                {{item.nikename}}
+                  <view class='strong'>领先</view>
+                </navigator>
+              </view>
+              <view class='commodity-pic'>
+                <navigator url="../goods/index?id={{item.product.productId}}" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+                  <image src='{{item.product.mainUrl}}'></image>
+                  <view class='line'>
+                    <view animation='{{attentionAnim}}'></view>
+                  </view>
+                </navigator>
+              </view>
+              <view class='commodity-name'>
+                {{item.product.productName}}
+              </view>
+              <view class='price'>
+                <text class='now-price'>￥{{item.currentPrice}}</text>
+                <text class='original-price'>￥{{item.product.productPrice}}</text>
+              </view>
+              <!-- <button class='buy-btn' id="shareBtn" data-auctionId="{{item.auctionId}}" open-type="share" hover-class="other-button-hover">
+                <text>仙拍</text>
+              </button> -->
+              <view class='buy-btn' data-auctionId="{{item.auctionId}}" bindtap='bannerClick'>免费举牌</view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='types-box'>
+      <view url="pages/index/index" open-type="redirect" hover-class="navigator-hover" class='types-list' wx:for="{{types}}" wx:key="index" wx:if="{{index < 7}}" data-id="{{item.classifyId}}" bindtap='goodsType'>
+        <view class='img'>
+          <image src="{{item.mainUrl}}" style='width:25rpx;height:35rpx;margin-top:30rpx;'></image>
+        </view>
+        <text>{{item.classifyName}}</text>
+      </view>
+      <view class='types-list' bindtap='allTypeFunc'>
+        <view class='img'>
+          <image src="/image/home/all.png" style='width:35rpx;height:35rpx;margin-top:30rpx;'></image>
+        </view>
+        <text>全部分类</text>
+      </view>
+    </view>
+    <view class='my-num'>
+      <image src="/image/home/my-ico.png" class='may-ico'></image>
+      <view>
+        <view class='my-num-couent'>
+          您有仙贝
+          <text>{{integralNumber}}个</text>
+        </view>
+        <view class='my-num-info'>仙贝参与竞拍，免费得好物</view>
+      </view>
+      <view class='my-btn' bindtap='myxbTapedFunc'>
+        <image src="/image/home/my-btn.png"></image>
+        <text>赚仙贝</text>
+      </view>
+    </view>
+    <view class='item-box'>
+      <view class='hot-box'>
+        <view class='item-term' data-gbId="{{Hots.gbId}}" data-url="/pages/goods/index" bindtap='jump'>
+          <view class='titie'>疯团来袭</view>
+          <view class='sun-title'>{{Hots.product.productName}}</view>
+          <view class='hot-num'>
+            <text>{{Hots.total || 0}}</text>人疯团 ></view>
+          <view class='hot-img' style='background: url("{{Hots.product.mainUrl}}") no-repeat center / auto 100%;'></view>
+        </view>
+        <view class='item-term' data-gbId="{{dapai.gbId}}" data-url="/pages/goods/index" bindtap='jump'>
+          <view class='titie'>周{{currentDay}}大牌</view>
+          <view class='sun-title'>{{dapai.product.productName}}</view>
+          <view class='hot-num'>
+            <text>{{dapai.total || 0}}</text>人疯团 ></view>
+          <view class='hot-img' style='background: url("{{dapai.product.mainUrl}}") no-repeat center / auto 100%;'></view>
+        </view>
+      </view>
+      <view class='every-day'>
+        <view class='titie'>
+          <image src='/image/home/buy-ico.png'></image>
+          <text>每日仙拍</text>
+        </view>
+        <view class='time'>
+          <scroll-view scroll-x style="width: 100%">
+            <text wx:for="{{dayTime}}" wx:key="index" data-time="{{item}}" class='{{selectDate==item?"active":""}}' bindtap='onClickDay'> 今天 {{item}}:00</text>
+          </scroll-view>
+        </view>
+        <view class='goods-list'>
+          <scroll-view scroll-x style="width: 100%">
+            <view style='width:1000rpx;'>
+              <view class="swiper-item" wx:for="{{dayData}}" wx:key="index">
+                <view class='hot'>
+                  <view class='user {{index > 0 ? "user"+index : ""}}"' wx:for="{{item.imgDetails}}" wx:key="index">
+                    <image src='{{item.customer.wxHeadimgurl}}'></image>
+                  </view>
+                  <!-- <view class='user user1'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <view class='user  user2'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view> -->
+                  <text class="cray-total">{{item.total}}人疯抢</text>
+                </view>
+                <view class='commodity-pic'>
+                  <navigator url="index" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+                    <image src='{{item.product.mainUrl}}'></image>
+                    <!-- <view class='line'>
+                      <view></view>
+                    </view> -->
+                  </navigator>
+                </view>
+                <view class='commodity-name'>
+                  {{item.product.productName}}
+                </view>
+                <view class='price'>
+                  <text class='now-price'>￥{{item.currentPrice}}</text>
+                  <text class='original-price'>原价{{item.product.productPrice}}</text>
+                </view>
+                <view class='buy-btn' data-batchNo="{{item.batchNo}}" data-url="/pages/goods/index" bindtap='jump' wx:if="{{item.startDate < currentMiao }}">马上抢</view>
+                <view class='remind-btn' data-auctionId="{{item.auctionId}}" data-url="/pages/goods/index" bindtap='noticeAuction' wx:if="{{item.startDate > currentMiao }}">提醒我</view>
+              </view>
+              <!-- <view class="swiper-item">
+                <view class='hot'>
+                  <view class='user'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <view class='user user1'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <view class='user  user2'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <text>20264人疯抢</text>
+                </view>
+                <view class='commodity-pic'>
+                  <navigator url="pages/index/index" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+                    <image src='/image/home/userHead.jpg'></image>
+                    <view class='line'>
+                      <view></view>
+                    </view>
+                  </navigator>
+                </view>
+                <view class='commodity-name'>
+                  耐克NIKE男子休闲鞋耐克NIKE男子休闲鞋
+                </view>
+                <view class='price'>
+                  <text class='now-price'>￥26451.00</text>
+                  <text class='original-price'>原价156465.00</text>
+                </view>
+                <view class='remind-btn'>提醒我</view>
+              </view>
+              <view class="swiper-item">
+                <view class='hot'>
+                  <view class='user'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <view class='user user1'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <view class='user  user2'>
+                    <image src='/image/home/userHead.jpg'></image>
+                  </view>
+                  <text>20264人疯抢</text>
+                </view>
+                <view class='commodity-pic'>
+                  <navigator url="pages/index/index" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+                    <image src='/image/home/userHead.jpg'></image>
+                    <view class='line'>
+                      <view></view>
+                    </view>
+                  </navigator>
+                </view>
+                <view class='commodity-name'>
+                  耐克NIKE男子休闲鞋耐克NIKE男子休闲鞋
+                </view>
+                <view class='price'>
+                  <text class='now-price'>￥26451.00</text>
+                  <text class='original-price'>原价156465.00</text>
+                </view>
+                <view class='remind-btn'>提醒我</view>
+              </view> -->
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <view class='sunburn'>
+      <view class="title">
+        <view class='max-title'>
+          <image src='/image/home/sd_ico.png'></image>
+          <text>仙友晒单</text>
+          <image src='/image/home/sd_ico.png'></image>
+        </view>
+        <view class='sun-title'>和世界一起分享“单车变摩托”</view>
+      </view>
+      <view class='commodity'>
+        <view class='commodity-item' wx:for="{{ByOrder}}" wx:key="index" data-id="{{item.product.productId}}" data-url="/pages/goods/index" bindtap='jump'>
+          <navigator url="index" open-type="redirect">
+            <view class='user-info'>
+              <image src='{{item.userOrder.headImg}}'></image>
+              <view class='comment ellipsis'>{{item.comment}}</view>
+              <!-- <view class='time'>2018-07-16 期</view> -->
+            </view>
+            <view class='commodity-pic' style='background: url("{{item.product.mainUrl}}") no-repeat center / auto 100%;'>
+              <view class='price'>
+                <view class='price-buy'>￥
+                  <text>{{item.userOrder.productDetail.productNowPrice}}</text>
+                </view>
+                <view class="earn">净赚{{item.product.productPrice-item.userOrder.productDetail.productNowPrice}}</view>
+              </view>
+            </view>
+            <view class='commodity-info'>
+              <view class='pic-box' style='background: url("{{item.product.mainUrl}}") no-repeat center / auto 100%;'></view>
+              <view class='name ellipsis'>{{item.product.productName}}</view>
+              <view class='price'>¥{{item.product.productPrice}}</view>
+              <view class='line'>
+                <image src="/image/home/arrow-icon.png"></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='special'>
+      <view class="title">
+        <view class='max-title'>
+          <image src='/image/home/sd_ico.png'></image>
+          <text>仙贝说</text>
+          <image src='/image/home/sd_ico.png'></image>
+        </view>
+        <view class='sun-title'>和世界一起分享“单车变摩托”</view>
+      </view>
+      <view class='hot-box' wx:if="findList[0]" style='background: url("{{findList[0].mainImg}}") no-repeat center / 100% auto;'>
+        <view class='hot-info'>
+          <image src="/image/home/hot.png"></image>{{findList[0].likeNum}}人觉得很酷</view>
+        <view class='hot-title-box'>
+          <view class='title-box'>
+            <view class='hot-title'>{{findList[0].title}}</view>
+            <view class='hot-user'>
+              <image src='{{findList.headImg}}'></image>
+              <text>{{findList[0].userName || ''}} | 推荐了{{findList[0].articleProductRel.length || 0}}件商品</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view style="width: 100%;height: 192rpx;overflow: hidden;background: #fff;padding: 30rpx;white-space: nowrap;" wx:if="findList[0]">
+        <scroll-view scroll-x style="width: auto;overflow:hidden;">
+          <view class='hot-list' wx:for="{{findList[0].articleProductRel}}" wx:key="index" data-id="{{item.product.productId}}" data-url="/pages/goods/index" bindtap='jump'>
+            <view class='hot-img' style='background: url("{{item.product.mainUrl}}") no-repeat left center / 200rpx 200rpx;'>
+            </view>
+            <view class='hot-content'>
+              <view class='hon-head-img'>
+                <image src='/image/home/t.png'></image>
+                <image src='/image/home/p.png'></image>
+              </view>
+              <text class='hot-goods-name'>{{item.product.productName}}</text>
+              <view class='hot-price'>￥{{item.productDetail.productNowPrice}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='sd-box' wx:if="findList[1]">
+        <view class='sd-item'>
+          <view class='hot'>
+            <view class='user'>
+              <image src='{{findList[1].headImg}}'></image>
+            </view>
+            <!-- <view class='user user1'>
+              <image src='/image/home/userHead.jpg'></image>
+            </view>
+            <view class='user  user2'>
+              <image src='/image/home/userHead.jpg'></image>
+            </view> -->
+            <text>{{findList[1].likeNum || 0}}人疯抢</text>
+          </view>
+          <view class='commodity-pic'>
+            <navigator url="pages/index/index" open-type="redirect" hover-class="navigator-hover" class='navigator'>
+              <image src='{{findList[1].mainImg}}'></image>
+              <view class='line'>
+                <view></view>
+              </view>
+            </navigator>
+          </view>
+          <view class='commodity-name'>{{findList[1].title}}</view>
+          <view class='price'>
+            <image class='head-img-icon' src='{{findList[1].headImg}}'></image>
+            <text class='original-price'>{{findList[1].userName || ''}} | 推荐了{{findList[1].articleProductRel.length || 0}}件商品</text>
+          </view>
+          <view class='classify-type'>
+            <text wx:if="{{findList[1].classifyType && findList[1].classifyType.length > 0}}">{{findList[1].classifyType[0]}}</text>
+            <text wx:if="findList[1].articleType">{{findList[1].articleType.articleTypeName}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='selected'>
+      <view class="title">
+        <view class='max-title'>
+          <image src='/image/home/sd_ico.png'></image>
+          <text>精选大牌</text>
+          <image src='/image/home/sd_ico.png'></image>
+        </view>
+        <view class='sun-title'>正品大牌 品质保证</view>
+      </view>
+      <view class='camera-commodities-show'>
+        <view class='camera-commodies-list'>
+          <block wx:for="{{jxdapai}}" wx:key="index">
+            <template is="commodity-list" data="{{...item,index}}"></template>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class='end-page'>THE END</view>
+
+  </view>
+</view>
+<template name="commodity-list">
+  <view class="commodity-list  {{index%2==1?'right':'left'}}" data-id="{{productId}}" data-url="/pages/goods/index" bindtap='jump'>
+    <view class='hon-head-img'>
+      <image src='/image/home/t.png' wx:if='{{isGroupBuy==1}}'></image>
+      <image src='/image/home/p.png' wx:if='{{isAuction==1}}'></image>
+    </view>
+    <text class='camera-commodity-name'>{{productName}}</text>
+    <image class='camera-commodity-url' src='{{mainUrl}}'></image>
+    <view class='camera-commodity-price'>
+      <text class='camera-commodity-currentPrice'><text>¥</text>{{productPrice}}</text>
+      <text class='camera-commodity-origalPrice'>原价{{productPrice}}</text>
+    </view>
+    <view class='camera-user'>
+      <image class='camera-user-url' src='{{headImg}}'></image>
+      <text class='camera-user-nickname2'>{{createUsr || ''}}</text>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,35 @@
+<view class='list'>
+  <block wx:for="{{commentList}}" wx:key="{{commentId}}">
+        <template is="comment" data="{{...item}}"></template>
+      </block>
+</view>
+<template name = "comment">
+  <view class='commentItem'>
+    <view class='commentItem-header-sepretor'></view>
+    <view class='commentItem-header'>
+        <image class='commentItem-header-avar' src="{{userOrder.headImg}}"></image>
+        <view class='commentItem-header-main'>
+          <view class='commentItem-header-main-userInfo'>
+            <text class='commentItem-header-main-userInfo-text'>{{userOrder.userName}}</text>
+            <text class='commentItem-header-main-userInfo-address'> ({{userOrder.address.city}})</text>
+          </view>
+          <text class='comment-header-main-price'>仙拍价：¥{{userOrder.payPrice}}</text>
+        </view>
+        <view class='commentItem-header-trailing'>
+          <view class='commentItem-header-trailing-tags'></view>
+          <block wx:if="{{userOrder.commentMark == 1}}">
+            <text class='commentItem-header-trailing-gained'>返15贝壳券</text>
+          </block>
+        </view>
+    </view>
+    <view class='commentItem-owned'>
+      <text class='commentItem-owned-price'>净赚价：¥{{userOrder.gainPrice}}</text>
+      <view class='commentItem-owned-sepretor'></view>
+    </view>
+    <text class='commentItem-comment-content'>{{comment}}</text>
+    <view class='commentItem-footer'>
+      <text class='commentItem-footer-comment-createDate'>{{createTime}}期</text>
+      <view class='commentItem-footer-space'></view>
+    </view>
+  </view>
+</template>

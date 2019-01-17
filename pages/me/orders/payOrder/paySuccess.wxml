@@ -1,0 +1,24 @@
+<view class='pay-order-view'>
+  <view class='pay-order-success-view'>
+    <image class='pay-order-success-icon' src=''></image>
+    <text class='pay-order-success-tips'>支付成功</text>
+    <text class='pay-order-success-detail'>分享本单支付即送好礼</text>
+  </view>
+  <view class='pay-order-share-tip-view'>
+    <view class='line-view'></view>
+    <view class='sku-share-view'>
+      <image src="/image/home/my-ico.png" class='may-ico'></image>
+      <view>
+        <view class='sku-share-view-couent'>仙贝数量不足时，仙贝券可替换仙贝</view>
+        <view class='sku-share-view-info'>点击分享即送20仙贝券</view>
+      </view>
+      <view class='my-btn' bindtap='myxbTapedFunc'>
+        <image src="/image/home/my-btn.png"></image>
+        <text>去分享</text>
+      </view>
+    </view>
+    <view class='line-view'></view>
+  </view>
+</view>
+<button class='back-to-first-page-btn' bindtap='turnToFirstPage'>返回首页</button>
+<button class='back-to-jingPai-btn' bindtap='backToJP'>返回竞拍</button>

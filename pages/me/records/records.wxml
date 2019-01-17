@@ -1,0 +1,30 @@
+<view class = "browsing-header-view">
+  <block wx:for="{{categories}}" wx:key="{{typeId}}"  >
+    <text class="browsing-menu-all {{selectedCategory==item.typeId ? 'selected' :'' }}" data-typeId="{{item.typeId}}" bindtap='typeSelected'>{{item.name}}</text>
+  </block>
+</view>
+<view class='browsing-list'>
+  <block wx:for="{{skuList}}" wx:key="browseHistoryId">
+    <template is="sku-item" data="{{...item}}" ></template>
+  </block>
+
+</view>
+
+
+<template name='sku-item'>
+  <view class='sku-item'>
+    <image class='sku-item-url' src='{{product.mainUrl}}'></image>
+    <view class='sku-item-detail'>
+      <text class='sku-item-desc'>{{product.productDesc}}</text>
+      <view class='sku-item-properties'>
+        <block wx:if="{{skuGrouped == 1}}">
+          <image class='sku-item-grouped' src="/image/UserCenter/group.png"></image>
+        </block>
+        <block wx:if="{{skuPai == 1}}">
+          <image class='sku-item-pai' src="/image/UserCenter/group.png">拍</image>
+        </block>
+      </view>
+    </view>
+  </view>
+
+</template>

@@ -1,0 +1,64 @@
+<view class="order-menus">
+  <text class="order-menu {{viewType == '0'?'clicked':''}}" data-type='perpay' bindtap='menuClicked'>待付款</text>
+  <text class="order-menu {{viewType == '1'?'clicked':''}}" data-type='peSendSku' bindtap='menuClicked'>待发货</text>
+  <text class="order-menu {{viewType == '2'?'clicked':''}}" data-type='preGetSku' bindtap='menuClicked'>待收货</text>
+  <text class="order-menu {{viewType == '3'?'clicked':''}}" data-type='completed' bindtap='menuClicked'>已完成</text>
+</view>
+
+<view class='list'>
+  <block wx:for="{{myOrders}}" wx:key="{{userOrderId}}">
+        <template is="order" data="{{...item}}"></template>
+      </block>
+</view>
+
+<template name='order'>
+  <view class='order'>
+    <view class='order_main_info'>
+      <image class='order_sku_img' src='{{product.mainUrl}}'></image>
+       <view class='order-sku-info'>
+          <text class='order_sku_skuName'>{{product.productDesc}}</text>
+          <text class='order_sku_desc'>{{productDetail.productRefDesc}}</text>
+        </view>
+        <view class='order-detail'>
+          <text class='order_sku_price'>¥{{product.productPrice}}</text>
+          <text class='order_sku_original_price'>¥{{product.productPrice}}</text>
+          <text class='order_sku_num'>x{{productDetail.productNum}}</text> 
+        </view>
+    </view>
+    <view class='order_price_view'>
+      <text class='order_price_realMoney'>实付款 ¥{{payPrice}}</text>
+      <text class='order_price_freight'>含运费{{freight}}</text>
+    </view>
+    <view class='order_action'>
+      <view class='order_action_text'>
+        <block wx:if="{{playMark==2}}">
+          <text class='order_action_express'>{{expressName}}:{{expressPhone}}</text>
+          <text class='order_action_phoneNo'>官方电话：{{express}}</text>
+        </block>
+        <block wx:if="{{playMark==3 && commentMark == 1}}">
+          <text class='order_action_text_ypj'>已返 15 贝壳券</text>
+        </block>
+         <block wx:if="{{playMark==3 && commentMark == 0}}">
+          <text class='order_action_text_wpj'>评价晒单最多可返 15 贝壳券</text>
+        </block>
+      </view>
+      <view class='order_action_btns'>
+        <block wx:if="{{playMark==0 || playMark==1}}">
+          <text class='order_action_show_detail' data-orderId='{{userOrderId}}' bindtap='orderDetailFunc' >查看订单详情</text>
+        </block>
+        <block wx:if="{{playMark==0}}">
+          <text class='order_action_pay' data-orderId='{{userOrderId}}' bindtap='payForOrderFunc' >去付款</text>
+        </block>
+        <block wx:if="{{playMark==2}}">
+          <text class='order_action_dsh' data-orderId='{{userOrderId}}' bindtap='confirmReceiveOrderFunc' >确定收货</text>
+        </block>
+        <block wx:if="{{playMark==3 && commentMark == 1}}">
+          <text class='order_action_ypj' data-orderId='{{product.productId}}' bindtap='toCommentListFunc'>已评价</text>
+        </block>
+        <block wx:if="{{playMark==3 && commentMark == 0}}">
+          <text class='order_action_pjfq' data-orderId='{{userOrderId}}' bindtap='toCommentFunc'>评价返券</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

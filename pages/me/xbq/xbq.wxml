@@ -1,0 +1,43 @@
+<view class="ticket-menus">
+  <text class="ticket-menu {{currentType == 'false'?'clicked':''}}" data-type= 'false' bindtap='menuClicked'>未使用 ({{unUsedNumTickets}})</text>
+  <text class="ticket-menu {{currentType == 'true'?'clicked':''}}" data-type='true' bindtap='menuClicked'>已使用（{{usedTickets}}）</text>
+</view>
+
+<scroll-view>
+  <block wx:for="{{tickets}}" wx:key="{{ticket.ticketId}}">
+    <template is="tickets-box" data="{{...item}}"></template>
+  </block>
+</scroll-view>
+<template name="tickets-box">
+  <view class='ticket-out-box' bindtap='bindTickets' data-ticketId="{{ticket.ticketId}}">
+    <view class='left-select-icon' wx:if="{{isSelected}}">
+      <image wx:if="{{selected}}" class='is-selected' src="/image/UserCenter/selected-ticket.png"></image>
+      <view wx:if="{{!selected}}" class='no-selected'></view>
+    </view>
+    <view class='ticket-bg'>
+      <view class="ticket-number {{status == true ? 'gray-bg':''}}">{{ticket.quota}}</view>
+      <view class='ticket-info'>
+        <text class="ticket-title {{status == true ? 'gray':''}}">{{ticket.name}}</text>
+        <text class='get-info'>{{status == false ? '2018年8月1日获得':'2018年8月1日使用'}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- <
+
+<template name='used-Tickets'>
+  <view class='used-Tickets {{selected ? "ticket-selected" : ""}}' bindtap='bindTickets' data-ticketId="{{ticket.ticketId}}">
+    <text class="ticket-num {{status == true ? 'gray':''}}">{{ticket.quota}}</text>
+    <text class="ticket-desc {{status == true ? 'gray':''}}">{{ticket.name}}</text>
+    <view class='separate-view'></view>
+    <view class='footer-view'>
+      <text class='footer-view-desc'>{{status == false ? '2018年8月1日 评价晒单 获得':'2018年8月1日 使用'}}</text>
+      <view class='footer-view-showDetail'>
+        <text class='showDetail-title' data-ticketId='{{ticket.ticketId}}' bindtap='showDetailFunc'>{{status == false ? '使用说明':'使用记录'}}</text>
+        <image class='showDetail-image' src='/image/UserCenter/arrow.png' data-ticketId='{{ticket.ticketId}}' bindtap='showDetailFunc'></image>
+      </view>
+    </view>
+  </view>
+</template>
+ -->
+<button class='use-now-btn {{!hasSelected ? "gray-bg" : ""}}' disabled='{{!hasSelected}}' wx:if="{{isSelected === 'true' && tickets.length > 0}}" bindtap='useTicket'>立即使用</button>

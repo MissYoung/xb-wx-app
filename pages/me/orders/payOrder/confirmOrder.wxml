@@ -1,0 +1,49 @@
+<scroll-view class='list-item-view'>
+  <view class='user-info-view'>
+    <view class='user-view'>
+      <text class='user-name-view'>{{orderInfo.userName}}</text>
+      <text class='user-phone-view'>{{orderInfo.address.phone}}</text>
+    </view>
+    <text class='address-view'>{{orderInfo.address.city}}{{orderInfo.address.address}}</text>
+    <view class='line-view'></view>
+    <view class='product-view'>
+      <image class='product-view-image' src='{{orderInfo.product.mainUrl}}'></image>
+      <view class='product-view-detial'>
+        <text class='product-view-detial-desc'>{{orderInfo.product.productName}}</text>
+        <text class='product-view-detial-price'>¥{{orderInfo.productDetail.productRefDesc}}</text>
+      </view>
+      <view class='product-view-desc'>
+        <text class='product-view-desc-key'>{{orderInfo.product.productPrice}}</text>
+        <text class='product-view-desc-value'>{{orderInfo.productDetail.productNum}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='transport-view'>
+    <view class='transport-fee-view'>
+      <text class='transport-fee-view-title'>运费</text>
+      <text class='transport-fee-view-value'>{{orderInfo.freight}}</text>
+    </view>
+    <view class='sepre-line'></view>
+    <view class='comment-view'>
+      <text class='comment-view-title'>留言</text>
+      <text class='comment-view-value'>{{orderInfo.message}}</text>
+    </view>
+  </view>
+  <view class='money-view'>
+    <view class='product-money-view'>
+      <text class='product-money-view-title'>商品金额</text>
+      <text class='product-money-view-value'>¥{{orderInfo.payPrice}}</text>
+    </view>
+    <view class='transport-fee'>
+      <text class='transport-fee-title'>运费</text>
+      <text class='transport-fee-value'>¥{{orderInfo.freight}}</text>
+    </view>
+    <view class='sepre-line'></view>
+    <view class='real-fee-view'>
+      <text class='real-fee-view-title'>实付款:</text>
+      <text class='real-fee-view-value'>¥{{orderInfo.freight + orderInfo.payPrice}}</text>
+    </view>
+  </view>
+</scroll-view>
+<button class='wechat-pay-btn' data-orderId='{{orderInfo.userOrderId}}' bindtap='weChatPayFunc'>微信支付</button>

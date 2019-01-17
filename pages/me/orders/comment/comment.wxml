@@ -1,0 +1,21 @@
+<scroll-view class='comment'>
+  <view class='comment-sku-show'>
+    <image class='comment-sku-show-img' src="{{orderInfo.product.mainUrl}}"></image>
+    <view class='comment-sku-show-details'>
+      <text class='comment-sku-show-details-title'>{{orderInfo.product.productName}}</text>
+      <text class='comment-sku-show-details-detail'>{{orderInfo.productDetail.productRefDesc}}</text>
+    </view>
+  </view>
+  <view class='comment-content'>
+    <text class='comment-content-title'>评价晒单</text>
+    <textarea class='comment-content-comment' placeholder='认真评价+完美晒单最高有机会获得15仙贝券' placeholder-style='fontsize:26rpx; color:#B8B8B8' maxlength='200' bindinput='commentChangedFunc'></textarea>
+    <text class='comment-content-limit'>{{commentContent.length}}/200字</text>
+  </view>
+  <view class='comment-img-list'>
+    <!-- <view class='comment-img-add-img' bindtap='addNewImgaeFunc'>
+      <image src='comment-img-add-img-icon' src='/image/UserCenter/flowers.png'></image>
+      <text class='comment-img-add-img-text'>添加照片</text>
+    </view> -->
+  </view>
+</scroll-view>
+<button class='submit-comment-btn' data-orderId='{{orderInfo.userOrderId}}' bindtap='submitCommentBtnClicked'>提交评价</button>

@@ -1,0 +1,6 @@
+<!--types.wxml-->
+<view class="container">
+  <view class="types-list">
+    <view open-type="redirect" hover-class="navigator-hover" class="types-item" wx:for="{{types}}" style='background: url("{{item.mainDetailUrl}}") no-repeat center / 100% 100%;' data-id="{{item.classifyId}}" bindtap='goodsType' wx:key="index">{{item.classifyName}}</view>
+  </view>
+</view>

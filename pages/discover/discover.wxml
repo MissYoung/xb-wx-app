@@ -1,0 +1,230 @@
+<view class = "title-menu">
+  <text class="text-menu {{selectedMenu == 0? 'clicked':''}}" bindtap='menuBtnTaped' data-index = "0" >排行</text>
+  <text class="text-menu {{selectedMenu == 1? 'clicked':''}}" bindtap='menuBtnTaped' data-index = "1" >仙拍</text>
+  <text class="text-menu {{selectedMenu == 2? 'clicked':''}}" bindtap='menuBtnTaped' data-index = "2" >疯团</text>
+</view>
+
+<!-- 排行 -->
+<view wx:if="{{selectedMenu == 0}}" class='discover-sort'>
+  <view class='timeLineView' data-productId='{{articles.articleProductRel[0].product.productId}}' bindtap='showProductFunc' >
+    <!-- <view class='timeline-header'>
+      <view class='timeline-sub'>
+        <image class="user-avar" src="{{articles.headImg}}" ></image>
+        <text class="user-nickname">{{articles.userName}}</text>
+      </view>
+      <text class='user-seeback'>回顾</text>
+    </view> -->
+    <!-- <view class='separation-line'></view> -->
+    <image class='timeline-img' src='{{articles.mainImg}}'></image>
+    <view class='timeline-detail'>
+      <text class='timeline-title'>{{articles.title}}</text>
+      <text class='timeline-desc'>{{articles.content}}</text>
+      <view class='timeline-bottom-funtions'>
+        <view class='time-function'>
+          <image class='time-img' src='/image/discover/sort/time.png'></image>
+          <text class='time-show'>{{articles.createTime}}</text>
+        </view>
+        <view class='eye-function'>
+          <image class='eye-img' src='/image/discover/sort/eye.png'></image>
+          <text class='eye-show'>{{articles.lookNum}}</text>
+        </view>
+        <view class='good-function'>
+          <image class='good-img' src='/image/discover/sort/good.png'></image>
+          <text class='good-show'>{{articles.likeNum}}</text>
+        </view>
+        <view class='resend-function'>
+          <image class='resend-img' src='/image/discover/sort/resend.png'></image>
+        </view>
+      </view>
+    <view class='separation-line'></view>
+    </view>
+  </view>
+  <view class='scrollView'>
+    <text class='scroll-title'>大神排行榜</text>
+    <text class='scroll-desc'>仙拍已为 {{userNum}} 人省下 {{gainPriceSum}} 元</text>
+    <swiper circular="{{circular}}" vertical="{{vertical}}" interval="5000" duration="{{duration}}" current='1' previous-margin="60rpx" next-margin="60rpx" class="swiper-box">
+      <block wx:for="{{sort}}" wx:key="*this">
+        <swiper-item>
+            <view class='commodity-pic'>
+              <!-- <view class='sort-detail'></view> -->
+              <view class='detail-sort'>
+                <image class='detail-sort-award' src='/image/discover/sort/avard.png'></image>
+                <text class='detail-sort-ranking' texta>{{index+1}}</text>
+              </view>
+              <image class='top-user-avar' src='{{item.headImg}}'></image>
+              <view class='top-user-info'>
+                <text class='top-user-nickname'>{{item.username}}</text>
+                <text class='top-user-address'>四川 成都</text>
+              </view>
+              <view class='top-user-records'>
+                <text class='top-user-total-num'>共拍中{{item.productNum}}件商品</text>
+                <text class='top-user-total-money'>净赚{{item.gainPrice}}元</text>
+              </view>
+            </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='commentView'>
+    <view class='comment-column'>
+      <block wx:for="{{note}}" wx:key="">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template>
+      </block>
+    </view>
+    <view class='comment-column'>
+      <block wx:for="{{note}}" wx:key="">
+        <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 仙拍 -->
+<view wx:elif="{{selectedMenu == 1}}" class='discover-camera'>
+  <view class='camera-realtime-reminder'>
+    <image class='camera-icon' src='/image/discover/camera/group.png'></image>
+    <text class='camera-title'>仙拍速报 </text>
+    <text class='camera-detail'>|     {{xpsbObj.total}}人正在仙拍 {{xpsbObj.product.productName}}</text>
+    <image class='camera-redirect' src='/image/UserCenter/arrow.png'></image>
+  </view>
+
+  <view class='camera-show'>
+    <view class='camera-abc'>
+      <image class='camera-commodity-header' src='{{articleOne.mainImg}}'></image>
+      <image class='camera-user-header' src='{{articleOne.headImg}}'></image>
+      <text class='camera-user-nickname'>{{articleOne.title}}</text>
+      <text class='camera-user-commodity-desc'>{{articleOne.content}}</text>
+      <view class='camera-user-to-watch'>
+        <image class='camera-btn-bg' src='/image/discover/camera/btn_bg.png'></image>
+        <text class='camera-btn-title'>看看去</text>
+      </view>
+    </view>
+    <view class='camera-abc'>
+      <image class='camera-commodity-header' src='{{articleOne.mainImg}}'></image>
+      <image class='camera-user-header' src='{{articleOne.headImg}}'></image>
+      <text class='camera-user-nickname'>{{articleOne.title}}</text>
+      <text class='camera-user-commodity-desc'>{{articleOne.content}}</text>
+      <view class='camera-user-to-watch'>
+        <image class='camera-btn-bg' src='/image/discover/camera/btn_bg.png'></image>
+        <text class='camera-btn-title'>看看去</text>
+      </view>
+    </view>
+  </view>
+  <view class='camera-commodities-show'>
+    <view class='scroll-title-view'>
+      <text class='scroll-title-text'>随便逛逛</text>
+      <text class='scroll-sub-desc-text'>不经意中发现好货</text>
+    </view>
+    <view class='camera-commodies-list'>
+     <block wx:for="{{cameraCommodities}}" wx:key="{{actionId}}" >
+      <template is="commodity-list" data="{{...item,index}}" ></template>
+    </block>
+    </view>
+  </view>
+</view>
+
+
+
+
+<!-- 疯团 -->
+<view wx:else class='discover-group'>  
+  <view class='searchBarView'>
+    <image class='search-icon' src='/image/discover/group/search.png'></image>
+    <!-- <input class='input-search-view' placeholder-style="color:#CCCCCC" placeholder = '搜索疯团商'></input> -->
+    <navigator url="./search/search" open-type="navigate" hover-class="other-navigator-hover" class='input-search-view'>搜索疯团商</navigator>
+  </view>
+  <view class='big-scroll-view'>
+    <view class='scroll-title-view'>
+      <text class='scroll-title-text'>今日最热</text>
+      <text class='scroll-sub-desc-text'>为你搜索仙友最钟情商品</text>
+    </view>
+    <scroll-view  class='product_hot_list'  scroll-x>
+     <image class='commodity-big-image'  wx:for="{{hotProducts}}" wx:key="index" open-type="redirect" hover-class="navigator-hover" data-productId='{{item.product.productId}}' src='{{item.product.mainUrl}}' bindtap='hotProductTapped'></image>
+    </scroll-view>
+    <scroll-view class='product_class_list' scroll-x>
+      <view open-type="redirect" hover-class="navigator-hover" class="types-item" wx:for="{{proClass}}" style='background: url("{{item.mainDetailUrl}}") no-repeat center / 100% 100%;' data-id="{{item.classifyId}}" bindtap='productClassFunc' wx:key="index">{{item.classifyName}}</view>
+    </scroll-view>
+  </view>
+  <view class='random-sku-show'>
+    <view class='scroll-title-view'>
+      <text class='scroll-title-text'>随便逛逛</text>
+      <text class='scroll-sub-desc-text'>不经意中发现好货</text>
+    </view>
+    <view>
+      <block wx:for="{{commodities}}" wx:key="">
+        <template is="list" data="{{...item}}"></template>
+      </block>
+      <block wx:for="{{commodity-advertising}}" wx:key="">
+        <template is="item" data="{{...item}}" wx:if="{{index%10==1}}"></template>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 模块 -->
+<template name="item">
+  <view class="item">
+    <text class='item-time'>{{createTime}}期</text>
+    <navigator url="url" class="item-title">{{comment}}</navigator> 
+    <view class='item-bgImge-front-price'>
+      <image class='item-bgImage' src='{{product.mainUrl}}'></image>
+      <view class='item-price-show'>
+        <view class='item-bgImage-price-show'>
+          <text class='sub-price-unit'>¥</text>
+          <text class='sub-price-show'>{{userOrder.payPrice}}</text>
+        </view>
+        <!-- <text class='item-bgImage-price-show'>¥23</text> -->
+        <text class='item-bgImage-detail'>净赚{{product.productPrice-userOrder.payPrice}}</text>
+      </view>
+    </view>
+    <view class='item-detail-desc'>
+      <view class='item-sku-info-show'>
+        <image class='item-detail-img' src='{{userOrder.headImg}}'></image>
+        <view class='item-sku-desc'> 
+        <text class='item-sku-name'>{{userOrder.userName}}</text>
+        <text class='item-sku-origal-price'>{{userOrder.payPrice}}元</text>
+      </view>
+      </view>
+      <image class='item-link-to-sku' src='/image/UserCenter/arrow.png'></image>
+    </view>
+  </view>
+</template>
+
+<template name="list">
+  <view class='list' data-productId='{{product.productId}}' bindtap='sbggFunc'>
+    <image class='commodity-pic_list' src='{{product.mainUrl}}'></image>
+    <view class='commodity-detail-view'>
+      <text class='commodity-name-text'>{{product.productName}}</text>
+      <text class='commodity-detail-text'>{{product.productDesc}}</text>
+      <view class='commodity-schedule-view'>
+        <view class='schedule-show-view'>
+          <view class='schedule-current-schedule' style='width:{{stock==0? 100:currentStock*100/stock}}%'></view>
+        </view>
+        <text class='commodity-subNo-text'>疯抢{{commodity_sumNo}}件</text>
+      </view>
+      <view class='commodity-price-view'>
+         <text class='sub-price-unit'>¥{{currentPrice}}</text>
+        <text class='commodity-origal-price'>原价{{product.productPrice}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name = "commodity-list">
+  <view class="commodity-list  {{index%2==1?'right':'left'}}" data-productId='{{product.productId}}' bindtap='sbggFunc' >
+    <text class='camera-commodity-name'>{{product.productName}}{{index}}</text>
+    <image class='camera-commodity-url' src='{{product.mainUrl}}'></image>
+    <view class='camera-commodity-price'>
+      <text class='camera-commodity-currentPrice'>¥{{currentPrice}}</text>
+      <text class='camera-commodity-origalPrice'>原价{{product.productPrice}}</text>
+    </view>
+    <view class='camera-show-view'>
+      <view class='camera-current-schedule' style='width:{{cycleTime == 0 ? 100 : joinTimes*100/cycleTime}}%'>
+      </view>
+    </view>
+    <view class='camera-user'>
+      <image class='camera-user-url' src='/image/home/userHead.jpg'></image>
+      <text class='camera-user-nickname2'>{{commodity_buyer_name}}</text>
+    </view>
+  </view>
+</template>

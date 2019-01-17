@@ -1,0 +1,19 @@
+<view class='success-view-show'>
+
+  <view class='success-view-show-center'>
+    <view class='success-view-show-center-top'>
+      <view class='success-view-show-center-top-subView'>
+        <text class='success-view-show-center-top-subView-amount'>{{ticket.quota}}</text>
+        <text class='success-view-show-center-top-subView-detail'>{{ticket.name}}</text>
+      </view>
+    </view>
+    <view class='success-view-show-center-bottom'>
+      <text class='success-view-show-center-bottom-result'>评价成功</text>
+      <text class='success-view-show-center-bottom-detail'>送您{{ticket.quota}}贝壳券，请进入个人中心查看</text>
+      <view class='btn-views'>
+        <button class='btn-views-show-ticket' bindtap='gotoBeiKeTicketFunc'>查看贝壳券</button>
+        <button class='btn-views-show-back-to-main' bindtap='backToMainFunc'>返回首页</button>
+      </view>
+    </view>
+  </view>
+</view>

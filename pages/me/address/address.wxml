@@ -1,0 +1,24 @@
+<scroll-view class='list-item-view'>
+<radio-group class="radio-group" data-list='{{addressList}}' bindchange="radioChange">
+  <block wx:for='{{addressList}}' wx:key='{{item.addressId}}' >
+   <view class='addressItem'>
+    <view class='address-item-header' data-item='{{item}}' bindtap='itemClicked'>
+      <text class='address-item-username'>{{item.contacts}}</text>
+      <block wx:if="{{item.mark == 1}}">
+        <text class='address-item-defaultFlag'>默认</text>
+      </block>
+      <text class='address-item-phone'>{{item.phone}}</text>
+    </view>
+    <text class='address-item-content' data-item='{{item}}' bindtap='itemClicked'>{{item.city+item.address}}</text>
+    <view class='address-item-line'></view>
+    <view class='address-item-footer'>
+        <view>
+          <radio color='#FFD101' value="{{item.addressId}}" data-id='{{item.addressId}}' checked="{{item.mark}}"/>{{item.mark==1?'默认地址':'设为默认'}}
+        </view>
+      <text class='address-item-delbtn' data-id='{{item.addressId}}' bindtap='delAddressFunc'>删除</text>
+    </view>
+   </view>
+ </block>
+ </radio-group>
+</scroll-view>
+<button class='add-new-address' bindtap='addressAddFunc'>添加地址</button>

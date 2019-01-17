@@ -1,0 +1,115 @@
+<view class='header'>
+  <view class="userinfo">
+    <block>
+      <image class='avatarBackground' src='/image/UserCenter/headerBG.png'></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class='separation'></view>
+</view>
+<view class='section-first'>
+  <view class='block01 extend' bindtap='myxbTapedFunc' >
+    <image class="block02" src="/image/UserCenter/flowers.png" ></image>
+    <view class='block03'>
+      <view class='cell-header-view'>
+        <text class='cell-header'>我的仙贝</text>
+        <view class='cell-header-new-info'></view>
+      </view>
+      <text class='cell-detail'>{{xianBeiSum}} 个</text>
+    </view>
+  </view>
+  <view class='block01' bindtap='xbqTapedFunc'>
+    <image class="block02" src="/image/UserCenter/money.png" ></image>
+    <view class='block03'>
+      <view class='cell-header-view'>
+        <text class='cell-header'>我的贝壳券</text>
+        <view class='cell-header-new-info'></view>
+      </view>
+      <text class='cell-detail extend'>{{beiKeTicketsNum}} 张可用</text>
+    </view>
+  </view>
+</view>
+
+<view class='section-second'>
+  <view class='section-second-header'>
+    <text class='all-order'>全部订单</text>
+    <image class='arrow' src='/image/UserCenter/arrow.png'></image>
+  </view>
+  <view class='section-second-items'>
+    <view class='sub-module' data-click-type='0' bindtap='ordersTaped' hover-class='navigator-hover'>
+      <view class='module-img-header'>
+        <image class='module-img' src = '/image/UserCenter/module01.png' ></image>
+        <view class='module-img-new-info'></view>
+      </view>
+      <view class='module-name'>待付款</view>
+    </view>
+    <view class='sub-module' data-click-type='1' bindtap='ordersTaped' hover-class='navigator-hover'>
+      <view class='module-img-header'>
+        <image class='module-img' src = '/image/UserCenter/module02.png' ></image>
+        <view class='module-img-new-info'></view>
+      </view>
+      <view class='module-name'>待发货</view>
+    </view>
+    <view class='sub-module' data-click-type='2' bindtap='ordersTaped' hover-class='navigator-hover'>
+      <view class='module-img-header'>
+        <image class='module-img' src = '/image/UserCenter/module03.png' ></image>
+        <view class='module-img-new-info'></view>
+      </view>
+      <view class='module-name'>待收货</view>
+    </view>
+    <view class='sub-module' data-click-type='3' bindtap='ordersTaped' hover-class='navigator-hover'>
+      <view class='module-img-header'>
+        <image class='module-img' src = '/image/UserCenter/module04.png'></image>
+        <view class='module-img-new-info'></view>
+      </view>
+      <view class='module-name'>评价送券</view>
+    </view>
+    <!-- <view class='sub-module' data-click-type='4' bindtap='ordersTaped' hover-class='navigator-hover'>
+      <view class='module-img-header'>
+        <image class='module-img' src = '/image/UserCenter/tksh.png' ></image>
+        <view class='module-img-new-info'></view>
+      </view>
+      <view class='module-name'>退款/售后</view>
+    </view> -->
+  </view>
+</view>
+
+<!-- <view class='section-three'>
+  <view class='sub-item-friend' bindtap='friendTaped'>
+    <view class='title-friend'>
+      <view class='sub-item-theme-friend'>
+        <image class='item-img' src = '/image/UserCenter/friendSort.png' ></image>
+        <view class='item-name'>好友排名</view>
+      </view>
+      <text class='item-friend-sort'>第 3 名</text>
+    </view>
+    <text class='item-friend-detail'>累计拍中2件商品 净赚¥3875.65元</text>
+  </view>
+</view> -->
+
+<view class='section-four'>
+  <view class='sub-item' bindtap='addressTaped'>
+    <view class='sub-item-theme'>
+      <image class='item-img' src = '/image/UserCenter/item-location.png' ></image>
+      <view class='item-name'>收货地址</view>
+    </view>
+    <image class='arrow' src='/image/UserCenter/arrow.png'></image>
+  </view>
+
+  <view class='sub-item' bindtap='collectTaped'>
+    <view class='sub-item-theme'>
+      <image class='item-img' src = '/image/UserCenter/item-fav.png' ></image>
+      <view class='item-name'>我的收藏</view>
+    </view>
+    <image class='arrow' src='/image/UserCenter/arrow.png'></image>
+  </view>
+
+  <view class='sub-item' bindtap='recordsTaped'>
+    <view class='sub-item-theme'>
+      <image class='item-img' src = '/image/UserCenter/item-time.png' ></image>
+      <view class='item-name'>浏览记录</view>
+    </view>
+    <image class='arrow' src='/image/UserCenter/arrow.png'></image>
+  </view>
+</view>

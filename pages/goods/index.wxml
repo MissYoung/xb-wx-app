@@ -1,0 +1,203 @@
+<!--index.wxml-->
+<view class="container" wx:if="{{goodsData}}">
+  <view class='goods-info' style='background: url({{product.mainUrl}}) no-repeat left top / 100%'>
+    <view class='goods-name'>{{product.productName}}</view>
+  </view>
+  <view class='record-box'>
+    <view class='title'>
+      <view class='user-head-list'>
+        <view class='user-head-box'>
+          <view class='user' wx:if='auction.details[auction.details.length - 3]'>
+            <image src='{{auction.details[auction.details.length - 3].customer.wxHeadimgurl}}'></image>
+          </view>
+          <view class='user user1' wx:if='auction.details[auction.details.length - 2]'>
+            <image src='{{auction.details[auction.details.length - 2].customer.wxHeadimgurl}}'></image>
+          </view>
+          <view class='user user2' wx:if='auction.details[auction.details.length - 1]'>
+            <image src='{{auction.details[auction.details.length - 1].customer.wxHeadimgurl}}'></image>
+          </view>
+        </view>
+        <text>{{auction.total}}人参与竞拍</text>
+      </view>
+    </view>
+    <view class='max-time'>{{clock}}</view>
+    <view class='price'>
+      <text class='max'>￥{{auction.currentPrice}}</text>
+      <text class='min'>￥{{product.productPrice}}</text>
+    </view>
+    <view class='line'>
+      <view animation='{{attentionAnim}}'></view>
+    </view>
+    <view class="xianpai">
+      <view class='comment-head' wx:if="{{auction.current.customer}}">
+        <view class='head-img'>
+          <image src="{{auction.current.customer.wxHeadimgurl}}"></image>
+        </view>
+        <view class='user-info'>
+          <view class='name'>{{auction.current.customer.wxNickname}}</view>
+          <view class='info'>若无人出价，将以￥{{auction.currentPrice}}拍得本商品</view>
+          <view class='linxian'>领先</view>
+        </view>
+      </view>
+      <view class='more'>
+        <view class='comment-head' wx:for="{{auctionsData}}" wx:key="{{index}}" wx:if="{{auctionsData}}">
+          <view class='head-img'>
+            <image src="{{item.customer.wxHeadimgurl}}"></image>
+          </view>
+          <view class='user-info'>
+            <view class='name'>{{item.customer.wxNickname}}</view>
+            <view class='linxian'>￥{{auction.currentPrice}}</view>
+            <view class='quit'>出局</view>
+          </view>
+        </view>
+        <view class='all'>全部竞拍记录 ></view>
+      </view>
+    </view>
+  </view>
+  <view class='yaoqin'>
+    <view class='title'>邀请好友赠送贝壳</view>
+    <view class='count'>已有
+      <text>{{yaoQin.friendNum}}</text> 位好友赠送我
+      <text>{{yaoQin.sendConchNum}}</text> 贝壳</view>
+    <view class='info'>贝壳只对当前商品有效，默认优先使用贝壳竞拍</view>
+    <view class='btn'>
+      <button bindtap='onShareAppMessage' open-type="share">邀请好友送我贝壳</button>
+    </view>
+  </view>
+  <view class='tuangou'>
+    <view class='tuangou-title'>
+      <view class='user-head-box'>
+        <view class='user' wx:if='{{groupBuy.details[0]}}'>
+          <image src='{{groupBuy.details[0].customer.wxHeadimgurl}}'></image>
+        </view>
+        <view class='user user1' wx:if='{{groupBuy.details[1]}}'>
+          <image src='{{groupBuy.details[1].customer.wxHeadimgurl}}'></image>
+        </view>
+        <view class='user user2' wx:if='{{groupBuy.details[2]}}'>
+          <image src='{{groupBuy.details[2].customer.wxHeadimgurl}}'></image>
+        </view>
+      </view>
+      <text>{{groupBuy.total}}人参与疯团</text>
+    </view>
+    <view class='tuangouPrice'>
+      ¥
+      <text class='currentPrice'>{{groupBuy.originalPrice}}</text>
+      <text class='oldPrice'>原价¥{{product.productPrice}}</text>
+    </view>
+    <view class='Surplus'>共{{groupBuy.stock}}件宝贝 还剩余{{groupBuy.currentStock}}件</view>
+    <!-- <view class='info'>
+      <view class='info-box'>
+        <view class='title'>商品阅读量达到
+          <text>9253</text>/10000</view>
+        <view class='gongxian'>您贡献了300阅读量，团购价格下降¥3元</view>
+        <view class='jindu'>
+          <view></view>
+        </view>
+      </view>
+      <button class='red'>去分享</button>
+    </view> -->
+    <view class='info'>
+      <view class='info-box'>
+        <view class='jindu'>
+          <view style='width:{{task.currentContributionValue/task.totalContributionValue}}%'></view>
+        </view>
+        <view class='title'>贡献值满
+          <text>{{task.nextContribution}}</text>价格减少￥{{task.price}}</view>
+        <view class='gongxian'>闪拍一次增加贡献<text>{{task.auctionContribution}}</text></view>
+        <view class='gongxian'>团购一次增加贡献<text>{{task.grouByContribution}}</text></view>
+        <button class='red' bindtap='onShareTuangou' open-type="share">去分享</button>
+        <!-- 您贡献了1535下仙拍， -->
+
+      </view>
+      
+      <!-- <button>赚拍币</button> -->
+    </view>
+    <view class='more'>
+      <view class='comment-head' wx:for="{{groupBuy.details}}" wx:key="{{index}}" wx:if="{{index>0 && index < 3}}">
+        <view class='head-img'>
+          <image src="{{item.customer.wxHeadimgurl}}"></image>
+        </view>
+        <view class='user-info'>
+          <view class='name'>{{item.customer.wxNickname}}</view>
+          <view class='linxian'>￥{{auction.currentPrice}}</view>
+          <view class='quit'>成交</view>
+        </view>
+      </view>
+      <view class='all'>全部成交记录 ></view>
+    </view>
+  </view>
+  <!-- 评论 -->
+  <view class='comments'>
+    <view class='comment-title'>
+      <view class='user-head-box'>
+        <view class='user' wx:if='auction.details[auction.details.length - 3]'>
+          <image src='{{auction.details[auction.details.length - 3].customer.wxHeadimgurl}}'></image>
+        </view>
+        <view class='user user1' wx:if='auction.details[auction.details.length - 2]'>
+          <image src='{{auction.details[auction.details.length - 2].customer.wxHeadimgurl}}'></image>
+        </view>
+        <view class='user user2' wx:if='auction.details[auction.details.length - 1]'>
+          <image src='{{auction.details[auction.details.length - 1].customer.wxHeadimgurl}}'></image>
+        </view>
+      </view>{{commentList.totalCount}}人发表评论
+      <text>全部评论</text>
+    </view>
+    <view class='comment-content'>
+      <scroll-view scroll-x style="width: 100%">
+        <view class='comment-item' wx:for="{{commentList.items}}" wx:key="index">
+          <view class='comment-head'>
+            <view class='head-img'>
+              <image src="{{item.userOrder.headImg}}"></image>
+            </view>
+            <view class='user-info'>
+              <view class='name'>{{item.userOrder.userName}}</view>
+              <view class='price'>仙拍价：¥165.42</view>
+              <view class='price'>净赚价：¥{{item.userOrder.gainPrice}}</view>
+            </view>
+          </view>
+          <view class='user-content'>
+            {{item.comment}}
+          </view>
+          <view class='comment-img'>
+            <image wx:for="{{item.commentImg}}" wx:for-index="indexs" wx:for-item="items" wx:key="indexs" data-index="{{index}}" data-indesx="{{indexs}}" src="{{items.fileUrl}}" bindtap='previewImg'></image>
+          </view>
+          <view>{{item.createTimes}}期 评论送券</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 商品详细参数 -->
+  <view class='goods-details'>
+    <view class='goods-title'>商品详细参数</view>
+    <view class='goods-content'>
+      <image src='{{product.mainUrl}}'></image>
+    </view>
+  </view>
+  <view class='m-height'></view>
+  <!-- 购买 -->
+  <view class='buy-box'>
+    <button type="primary" open-type="share" data-name="pageShare" id="share" class='share'>
+      <view class='ico' style='background: url(/image/home/share.png) no-repeat center / 45rpx'></view>
+      <view class='name'>分享</view>
+    </button>
+    <button type="primary" class='collection' bindtap='collection'>
+      <view class='ico' style='background: url(/image/home/sc.png) no-repeat center / 45rpx'></view>
+      <view class='name'>收藏</view>
+    </button>
+    <button type="primary" class='ft {{(groupBuy.end)? "hide":""}}' data-type='groupBuy' bindtap='buy'>
+      <view class='ico'>疯团</view>
+      <view class='name'>疯团价 {{groupBuy.currentPrice}}</view>
+    </button>
+    <button type="primary" class='xp {{(auction.end)? "hide":""}}' data-type='auction' bindtap='buy'>
+      <view class='ico'>仙拍</view>
+      <view class='name'>{{wallet.conch}}贝壳 | {{wallet.xianbei}}仙贝</view>
+    </button>
+  </view>
+</view>
+
+<view class='no-goods-tips' wx:if="{{!goodsData || goodsData.length <= 0}}">
+  <view class='tips-container'>
+    <text class='text-tips'>{{noGoodsTips}}</text>
+    <text class='back-index-btn' bindtap='backToIndex'>返回</text>
+  </view>
+</view>

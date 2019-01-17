@@ -1,0 +1,71 @@
+<view class="header_bg_view">
+  <view class='header_view'>
+      <view class='header_view_user_xb'>
+        <image class='header_view_user_avar' src="{{userInfo.avatarUrl}}"></image>
+        <view class='header_view_user_info'>
+          <view class='xb_num_show'>
+            <text class='xb_num'>{{xbNum}}</text>
+            <text class='xb_num2'>  仙贝</text>
+          </view>
+          <text class='xb_today_num'>今日已获得{{xbTodayNum}}仙贝</text>
+        </view>
+        <view class='header_view_for_detail' bindtap='showDetailFunc'>
+          <image class='header_view_detail_icon' src='/image/UserCenter/arrow.png'></image>
+          <text class='header_view_detail_content'>仙贝明细</text>
+          <image class='header_view_detail_arrow' src='/image/UserCenter/arrow.png'></image>
+        </view>
+      </view>
+      <text class='user_today_sign'>{{isSigned == true? "今天您已签到~":"今天还没有签到~"}} </text>
+      <view class='header_sign_graph'>
+        <block wx:for='{{pointPolicy}}' wx:key='{{item.taskId}}'>
+            <block wx:if='{{index >= 1}}'>
+              <view class="the_day_line {{index+1<=currentSignDay?'red':''}}"></view>
+            </block>
+            <view class='the_day_detail'>
+              <text class='the_day_point'>{{pointPolicy[index]}}</text>
+              <view class="the_day_circle {{index+1<=currentSignDay?'red':''}}"></view>
+              <text class="the_day_content {{index+1==currentSignDay?'red':''}}">{{index+1 == currentSignDay? "今" :index+1}}天</text>
+            </view>
+        </block>
+      </view>
+      <view class='header_btn' bindtap='signFunc'>
+        <image class='sign_btn' src="{{isSigned == true?'/image/UserCenter/btn.png':'/image/UserCenter/btn_yellow.png'}}"></image>
+        <text class='sign_btn_title'>{{isSigned == true?'已签到':'签到'}}</text>
+      </view>
+  </view>
+</view>
+
+<view class='task_title'>
+  <view class='task_cycle'></view>
+  <text class='task_title_content'>每日任务</text>
+  <view class='task_cycle'></view>
+</view>
+
+<scroll-view class='list-item-view'>
+  <block wx:for="{{tasks}}" wx:key="{{item.taskId}}" >
+    <view class='task_view'>
+      <view class='task_leftView'>
+        <view>
+          <text class='task_for_title'>{{item.taskName}}</text>
+          <block wx:if='{{item.taskId == 2}}'>
+            <text class='task_for_currentNum'>  {{item.taskCurrentNum}}</text>
+            <text class='task_for_sumNum'>/{{item.taskTotalNum}}</text>
+          </block>
+        </view>
+        <view class='task_detail_view'>
+          <text class='task_for_detail'>{{item.taskDetail}}</text>
+          <text class='task_for_detail_point'>  +{{item.taskPoint}}</text>
+        </view>
+        <block wx:if="{{item.taskPoint2 > 0}}">
+          <view class='task_detail_view'>
+            <text class='task_for_detail'>{{item.taskDetail2}}</text>
+            <text class='task_for_detail_point'>  +{{item.taskPoint}}</text>
+          </view>
+        </block>
+      </view>
+      <view class='task_rightView'>
+        <button class="task_btn {{item.taskTotalNum == item.taskCurrentNum ? 'task_finish' : ''}}" data-id='{{item.taskId}}' open-type="{{item.taskId > 1?'share':''}}" bindtap="{{item.taskId > 1?'':'doTaskFunc'}}">{{item.taskTotalNum == item.taskCurrentNum ? item.taskFinish:item.taskState}}</button>
+      </view>
+    </view>
+  </block>
+</scroll-view>
